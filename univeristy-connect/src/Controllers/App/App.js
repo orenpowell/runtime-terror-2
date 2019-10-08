@@ -1,7 +1,7 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Login from'./Views/Login/login'
+import Login from'../../Views/Login/login'
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class App extends React.Component {
 
@@ -18,7 +18,10 @@ class App extends React.Component {
 
   render(){
   return(
-    <Login></Login>
+    <Router>
+      <Login></Login>
+    </Router>
+    
   
   )
   }
