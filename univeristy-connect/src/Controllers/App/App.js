@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
-import Login from'../../Views/Login/login'
+import Login from '../Login/login'
+import HomePage from '../HomePage/HomePage'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class App extends React.Component {
@@ -8,7 +9,7 @@ class App extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      
+      loggedIn: false
     }
   }
 
@@ -16,10 +17,20 @@ class App extends React.Component {
 
   }
 
+   onConfirmLogin(){
+     console.log("here");
+    this.setState({loggedIn: true});
+  }
+
   render(){
+    const { loggedIn, onConfirmLogin } = this.state;
   return(
     <Router>
-      <Login></Login>
+      { loggedIn ? <HomePage></HomePage> :
+      <Login
+        confirmLogin={() => this.onConfirmLogin()}
+      ></Login>
+      }
     </Router>
     
   

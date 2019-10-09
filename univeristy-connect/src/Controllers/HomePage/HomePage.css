@@ -1,0 +1,8 @@
+.HomePage-Wrapper .Header{
+   padding-top: 30px;
+}
+
+.HomePage-Wrapper {
+    height: 900px;
+    border-style: solid;
+}
