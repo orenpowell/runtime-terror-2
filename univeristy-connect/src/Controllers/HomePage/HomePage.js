@@ -7,12 +7,16 @@ class HomePage extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-
+            setActiveMainPage: ''
         }
     }
 
     componentDidMount(){
 
+    }
+
+    setActiveMainPage(a){
+       // this.setState({setActiveMainPage: a});
     }
 
     render(){
@@ -23,10 +27,14 @@ class HomePage extends React.Component {
                 </div>
                 <div className='MainDisplay row'>
                     <div className="Sidebar col col-lg-2">
-                        <SideBar></SideBar>
+                        <SideBar
+                            setActiveMainPage={(a) => this.setActiveMainPage(a)}
+                        />
                     </div>
                     <div className="Main col col-lg-10">
-                        <Main></Main>
+                        <Main
+
+                        />
                     </div>
                 </div>
             </div>

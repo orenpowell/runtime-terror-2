@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './SideBar.css'
+import UniversityConn from '../../UniversityConnect'
 class Sidebar extends Component {
     constructor(props){
         super(props);
         this.state = {
-            modelLinks: null
+            modelLinks: UniversityConn.getModels()
         }
+        
     }
 
     componentDidMount() {
+        const { modelLinks } = this.state;
+        console.log(modelLinks);
     }
 
     onClick(){
@@ -18,14 +22,21 @@ class Sidebar extends Component {
     
 
     render(){
+        const{ setActiveMainPage } = this.props;
+        const { modelLinks } = this.state;
         return(
             <div className="Sidebar-Wrapper border">
-                <li className="Model-Link" >
-                Some link for the side bar
-                </li>
-                <li className="Model-Link">
-                Some link for the side bar
-                </li>
+                {modelLinks.map((item, i) => {
+                    return (
+
+                        <ul onClick={() => setActiveMainPage(item)} key={item.title + i}>
+                            
+                            <Link 
+                                to={item.path}>
+                                {item.title}
+                            </Link></ul>
+                    )
+                })}
             </div>
             
         )

@@ -4,6 +4,11 @@ import Login from '../Login/login'
 import HomePage from '../HomePage/HomePage'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
+
+import '../../universityConnect-registry'
+
+
+
 class App extends React.Component {
 
   constructor(props){
