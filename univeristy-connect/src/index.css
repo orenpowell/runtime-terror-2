@@ -20,6 +20,10 @@ code {
 .Welcome-Wrapper
 {
   background-color: #FFFFFF;
+  color: #5A9BF4;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.2;
 }
 .Sidebar-Wrapper
 {
