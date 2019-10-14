@@ -14,7 +14,7 @@ class Header extends Component{
 
     render(){
         return(
-            <div className="HomePage-wrapper" id="Header">
+            <div className="HomePage-wrapper border" id="Header">
                 <p>This is the Header Component</p>
             </div>
         )
