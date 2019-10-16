@@ -1,0 +1,18 @@
+Name
+School Year
+DOB
+Relationship Status
+Gender
+Degree
+Hobbies
+Hometown
+Movies
+Books
+Sports & Outdoors
+Music
+Games
+Politics
+Food 
+Drink
+
+
