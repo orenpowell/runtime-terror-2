@@ -17,8 +17,7 @@ class MyProfile extends Component {
     render(){
         return(
             <div className="MyProfile-Wrapper">
-                <p>Welcome to my Profile</p>
-                <SearchBar></SearchBar>
+                
             </div>
         )
     }
@@ -27,5 +26,7 @@ class MyProfile extends Component {
 export default UniversityConn.registerModel({
     path: '/Components/MyProfile/MyProfile',
     Component: MyProfile,
-    title: 'My Profile'
+    title: 'My Profile',
+
+    type: 'model'
 })

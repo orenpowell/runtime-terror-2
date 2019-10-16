@@ -23,64 +23,64 @@ const TopDisplay = (props) =>
                     </div> */}
                     <div className="card-deck">
                         <div className="card">
-                        <div class="card-body">
-                        <h5 class="card-title">Card Title {props.title}</h5>
-                        <p class="card-text">Some text</p>
-                        <p class="card-text"><small class="text-muted">Maybe some extra stuff?</small></p>
+                        <div className="card-body">
+                        <h5 className="card-title">Card Title {props.title}</h5>
+                        <p className="card-text">Some text</p>
+                        <p className="card-text"><small className="text-muted">Maybe some extra stuff?</small></p>
                         </div>
 
                         </div>
 
                         <div className="card">
-                        <div class="card-body">
-                        <h5 class="card-title">Card Title {props.title}</h5>
-                        <p class="card-text">Some text</p>
-                        <p class="card-text"><small class="text-muted">Maybe some extra stuff?</small></p>
+                        <div className="card-body">
+                        <h5 className="card-title">Card Title {props.title}</h5>
+                        <p className="card-text">Some text</p>
+                        <p className="card-text"><small className="text-muted">Maybe some extra stuff?</small></p>
                         </div>
 
                         </div>
 
                         <div className="card">
-                        <div class="card-body">
-                        <h5 class="card-title">Card Title {props.title}</h5>
-                        <p class="card-text">Some text</p>
-                        <p class="card-text"><small class="text-muted">Maybe some extra stuff?</small></p>
+                        <div className="card-body">
+                        <h5 className="card-title">Card Title {props.title}</h5>
+                        <p className="card-text">Some text</p>
+                        <p className="card-text"><small className="text-muted">Maybe some extra stuff?</small></p>
                         </div>
 
                         </div>
 
                         <div className="card">
-                        <div class="card-body">
-                        <h5 class="card-title">Card Title {props.title}</h5>
-                        <p class="card-text">Some text</p>
-                        <p class="card-text"><small class="text-muted">Maybe some extra stuff?</small></p>
+                        <div className="card-body">
+                        <h5 className="card-title">Card Title {props.title}</h5>
+                        <p className="card-text">Some text</p>
+                        <p className="card-text"><small className="text-muted">Maybe some extra stuff?</small></p>
                         </div>
 
                         </div>
 
                         <div className="card">
-                        <div class="card-body">
-                        <h5 class="card-title">Card Title {props.title}</h5>
-                        <p class="card-text">Some text</p>
-                        <p class="card-text"><small class="text-muted">Maybe some extra stuff?</small></p>
+                        <div className="card-body">
+                        <h5 className="card-title">Card Title {props.title}</h5>
+                        <p className="card-text">Some text</p>
+                        <p className="card-text"><small className="text-muted">Maybe some extra stuff?</small></p>
                         </div>
 
                         </div>
 
                         <div className="card">
-                        <div class="card-body">
-                        <h5 class="card-title">Card Title {props.title}</h5>
-                        <p class="card-text">Some text</p>
-                        <p class="card-text"><small class="text-muted">Maybe some extra stuff?</small></p>
+                        <div className="card-body">
+                        <h5 className="card-title">Card Title {props.title}</h5>
+                        <p className="card-text">Some text</p>
+                        <p className="card-text"><small className="text-muted">Maybe some extra stuff?</small></p>
                         </div>
 
                         </div>
 
                         <div className="card">
-                        <div class="card-body">
-                        <h5 class="card-title">Card Title {props.title}</h5>
-                        <p class="card-text">Some text</p>
-                        <p class="card-text"><small class="text-muted">Maybe some extra stuff?</small></p>
+                        <div className="card-body">
+                        <h5 className="card-title">Card Title {props.title}</h5>
+                        <p className="card-text">Some text</p>
+                        <p className="card-text"><small className="text-muted">Maybe some extra stuff?</small></p>
                         </div>
 
                         </div>
