@@ -6,7 +6,7 @@ class Sidebar extends Component {
     constructor(props){
         super(props);
         this.state = {
-            modelLinks: UniversityConn.getModels()
+            modelLinks: UniversityConn.getSideModels()
         }
         
     }
