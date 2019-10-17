@@ -32,5 +32,5 @@ export default UniversityConn.registerModel({
     title: 'Housing',
 
     type: 'addon',
-    icon: 'couch'
+    icon: 'home'
 })

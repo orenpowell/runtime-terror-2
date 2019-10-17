@@ -33,5 +33,6 @@ export default UniversityConn.registerModel({
     Component: MyEvents,
     title: 'My Events',
 
-    type: 'model'
+    type: 'model',
+    icon: 'calendar-day'
 })

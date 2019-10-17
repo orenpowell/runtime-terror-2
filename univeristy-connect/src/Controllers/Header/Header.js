@@ -23,13 +23,9 @@ class Header extends Component{
             <div className="HomePage-wrapper border" id="Header">
                 <div className="Header-Search-wrapper col-lg-6 float-left">
                     <div className="input-group center-block">
-                    <div className="zip col-lg-9">
-                        <input type="text" className="form-control" placeholder="Search...."></input>
-                    </div>
-                    <div className="col-lg-3">
-                        <button className='btn-primary'>
-                        Search
-                        </button>
+                    <div className="zip col-lg-9" class="search">
+                        <span class="fa fa-search"></span>
+                        <input type="text" /*className="form-control"*/ placeholder="Search...."></input>
                     </div>
                     </div>
                 </div> 
