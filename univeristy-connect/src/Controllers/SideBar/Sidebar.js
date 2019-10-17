@@ -26,6 +26,7 @@ class Sidebar extends Component {
         const { modelLinks } = this.state;
         return(
             <div className="Sidebar-Wrapper border">
+                <img src="/media/unknown.jpg" class="profile-photo" />
                 {modelLinks.map((item, i) => {
                     return (
 
@@ -37,8 +38,10 @@ class Sidebar extends Component {
                             </Link></ul>
                     )
                 })}
+                <br></br>
+                <img src="/media/UWFLogo.png" class="university-logo" />
             </div>
-            
+
         )
     }
 }

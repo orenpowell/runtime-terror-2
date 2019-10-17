@@ -69,3 +69,16 @@ code {
 {
   background-color: #E6E6E6;
 }
+.col-md-4 {
+  max-width: 50%;
+}
+.profile-photo
+{
+  width: 100%;
+  padding: 25px;
+}
+.university-logo
+{
+  width: 100%;
+  padding: 25px;
+}
