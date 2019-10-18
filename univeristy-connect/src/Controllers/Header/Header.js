@@ -24,7 +24,7 @@ class Header extends Component{
                 <div className="Header-Search-wrapper col-lg-6 float-left">
                     <div className="input-group center-block">
                     <div className="zip col-lg-9" class="search">
-                        <span class="fa fa-search"></span>
+                        <span className="fa fa-search"></span>
                         <input type="text" /*className="form-control"*/ placeholder="Search...."></input>
                     </div>
                     </div>

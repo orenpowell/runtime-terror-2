@@ -15,36 +15,36 @@ class LoadPage extends Component {
     render() {
         return (
             <div className="LoadPage-Wrapper container">
-                <form>
-                    <div className="form-group">
+                <form onSubmit={e => this.props.handleSubmit(e)}>
+                    
                         {/* <label for="first_name">First Name</label>
                         <input type="text" id="first_name" ></input>
 
                         <label for="last_name">Last Name</label>
                         <input type="text" id="last_name" ></input> */}
                         
-                        <div class="col-md-4 mb-3">
-                        <div className="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">First Name</span>
+                      
+                        <div className="input-group col-md-4 mb-3">
+                            <div className="input-group-prepend">
+                                <span className="input-group-text">First Name</span>
                             </div>
-                            <input type="text" class="form-control" id="first_name"/>
+                            <input name ="first_name" type="text" className="form-control" id="first_name"/>
                         </div>
-                        </div>
-                        <div class="col-md-4 mb-3">
-                        <div className="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Last Name</span>
+
+                        
+                        <div className="input-group col-md-4 mb-3">
+                            <div className="input-group-prepend">
+                                <span className="input-group-text">Last Name</span>
                             </div>
-                            <input type="text" class="form-control" id="last_name"/>
+                            <input name="last_name" type="text" className="form-control" id="last_name"/>
                         </div>
-                        </div>
-                        <div class="col-md-4 mb-3">
-                        <div className="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Year</span>
+                        
+                        
+                        <div className="input-group col-md-4 mb-3">
+                            <div className="input-group-prepend">
+                                <span className="input-group-text">Year</span>
                             </div>
-                            <select name="year" class="form-control" id="school_year">
+                            <select name="GradClass" className="form-control" id="school_year">
                             <option value="1">Freshman</option>
                             <option value="2">Sophmore</option>
                             <option value="3">Junior</option>
@@ -52,13 +52,13 @@ class LoadPage extends Component {
                             <option value="5">Graduate Student</option>
                             </select>
                         </div>
-                        </div>
-                        <div class="col-md-4 mb-3">
-                        <div className="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">DOB</span>
+                       
+                       
+                        <div className="input-group col-md-4 mb-3">
+                            <div className="input-group-prepend">
+                                <span className="input-group-text">DOB</span>
                             </div>
-                            <select name="Month" class="form-control" id="month">
+                            <select name="Month" className="form-control" id="month">
                             <option value="1">January</option>
                             <option value="2">February</option>
                             <option value="3">March</option>
@@ -72,7 +72,7 @@ class LoadPage extends Component {
                             <option value="11">November</option>
                             <option value="12">December</option>
                             </select>
-                            <select name="Month" class="form-control" id="month">
+                            <select name="Day" className="form-control" id="month">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -105,7 +105,7 @@ class LoadPage extends Component {
                             <option value="30">30</option>
                             <option value="31">31</option>
                             </select>
-                            <select name="Year" class="form-control" id="year">
+                            <select name="Year" className="form-control" id="year">
                             <option value="2020">2020</option>
                             <option value="2019">2019</option>
                             <option value="2018">2018</option>
@@ -199,13 +199,13 @@ class LoadPage extends Component {
                             <option value="1930">1930</option>
                             </select>
                         </div>
-                        </div>
-                        <div class="col-md-4 mb-3">
-                        <div className="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Relationship Status</span>
+                        
+                       
+                        <div className="input-group col-md-4 mb-3">
+                            <div className="input-group-prepend">
+                                <span className="input-group-text">Relationship Status</span>
                             </div>
-                            <select name="Relationship" class="form-control" id="relationship">
+                            <select name="Relationship" className="form-control" id="relationship">
                             <option value="1">Single</option>
                             <option value="2">Relationship</option>
                             <option value="3">Engaged</option>
@@ -219,20 +219,23 @@ class LoadPage extends Component {
                             <option value="11">Widowed</option>
                             </select>
                         </div>
-                        </div> 
-                        <div class="col-md-4 mb-3">
-                        <div className="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Gender</span>
+                        
+                        
+                        <div className="input-group col-md-4 mb-3">
+                            <div className="input-group-prepend">
+                                <span className="input-group-text">Gender</span>
                             </div>
-                            <select name="Gender" class="form-control" id="gender">
+                            <select name="Gender" className="form-control" id="gender">
                             <option value="1">Male</option>
                             <option value="2">Female</option>
                             <option value="3">Neutral</option>
                             </select>
-                        </div>
+                        
                         </div> 
-                    </div>
+                    <button type="submit" className="btn btn-primary">Submit</button>
+                   
+                    {/* <input type="submit" value="Submit" /> */}
+                   
                 </form>
 
 
@@ -242,11 +245,12 @@ class LoadPage extends Component {
 
 }
 
-export default UniversityConn.registerModel({
+export default LoadPage;
+// export default UniversityConn.registerModel({
 
-    path: '/Components/LoadPage/LoadPage',
-    Component: LoadPage,
-    title: 'LoadPage',
+//     path: '/Components/LoadPage/LoadPage',
+//     Component: LoadPage,
+//     title: 'LoadPage',
 
-    type: 'model'
-})
+//     type: 'model'
+// })
