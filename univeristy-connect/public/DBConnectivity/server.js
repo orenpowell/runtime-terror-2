@@ -31,15 +31,17 @@ var con = mysql.createConnection({
   });
 
   app.get('/userValidation',(req,res)=>{
-    con.query(`call validate_user('aam60', 'aam60');`, (err,resp,fields) => {
+    const credential = req.header('authorization').split(" ").slice(1)[0];
+    console.log(credential);
+    con.query(`call validate_user('${credential}');`, (err,resp,fields) => {
 
 			if(err) throw err;
-      
-     console.log(resp, fields);
-
+     
+    
+    console.log(`Connection made`, resp[0] );
+    res.send(resp[0]);
     });
-    console.log(`Connection made`, req.header('authorization'));
-    res.send("okay");
+   
   })
   
   

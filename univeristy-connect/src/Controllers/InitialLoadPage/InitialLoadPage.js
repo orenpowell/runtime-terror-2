@@ -12,10 +12,16 @@ class LoadPage extends Component {
 
     }
 
+    handleSubmit(event) {
+        event.preventDefault()
+        const data = new FormData(event.target);
+        this.props.history.push('/');
+    }
+
     render() {
         return (
             <div className="LoadPage-Wrapper container">
-                <form onSubmit={e => this.props.handleSubmit(e)} >
+                <form onSubmit={e => this.handleSubmit(e)} >
                     
                         {/* <label for="first_name">First Name</label>
                         <input type="text" id="first_name" ></input>
@@ -24,7 +30,7 @@ class LoadPage extends Component {
                         <input type="text" id="last_name" ></input> */}
                         
                       
-                        <div className="input-group col-md-4 mb-3">
+                        <div className="input-group col-md-auto mb-3">
                             <div className="input-group-prepend">
                                 <span className="input-group-text">First Name</span>
                             </div>
@@ -32,7 +38,7 @@ class LoadPage extends Component {
                         </div>
 
                         
-                        <div className="input-group col-md-4 mb-3">
+                        <div className="input-group col-md-auto mb-3">
                             <div className="input-group-prepend">
                                 <span className="input-group-text">Last Name</span>
                             </div>
@@ -40,7 +46,7 @@ class LoadPage extends Component {
                         </div>
                         
                         
-                        <div className="input-group col-md-4 mb-3">
+                        <div className="input-group col-md-auto mb-3">
                             <div className="input-group-prepend">
                                 <span className="input-group-text">Year</span>
                             </div>
@@ -54,7 +60,7 @@ class LoadPage extends Component {
                         </div>
                        
                        
-                        <div className="input-group col-md-4 mb-3">
+                        <div className="input-group col-md-auto mb-3">
                             <div className="input-group-prepend">
                                 <span className="input-group-text">DOB</span>
                             </div>
@@ -201,7 +207,7 @@ class LoadPage extends Component {
                         </div>
                         
                        
-                        <div className="input-group col-md-4 mb-3">
+                        <div className="input-group col-md-auto mb-3">
                             <div className="input-group-prepend">
                                 <span className="input-group-text">Relationship Status</span>
                             </div>
@@ -221,7 +227,7 @@ class LoadPage extends Component {
                         </div>
                         
                         
-                        <div className="input-group col-md-4 mb-3">
+                        <div className="input-group col-md-auto mb-3">
                             <div className="input-group-prepend">
                                 <span className="input-group-text">Gender</span>
                             </div>

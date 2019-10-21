@@ -11,6 +11,8 @@ class Login extends Component {
     }
   }
 
+
+
   handleChange = ({ target }) =>
   this.setState({
     value: { ...this.state.value, [target.name]: target.value },
@@ -21,13 +23,32 @@ class Login extends Component {
     const body = this.state.value;
     const requestURL = 'http://localhost:3001/userValidation';
 
-    req(requestURL, body );
-    auth.setToken('aam60', 'loginUser' )
-    this.redirectUser();
+    req(requestURL, body, (error, response, body) => {
+    
+    if (error) {
+        return console.error('Request failed:', body);
+    }
+      const result = JSON.parse(body);
+      if(result){
+        auth.setToken('aam60', 'loginUser' )
+        if(result[0].initialLogin === 0){
+          this.initialUser();
+        }
+        else{
+          this.redirectUser();
+        }
+      }
+    });
+   
+    // auth.setToken('aam60', 'loginUser' )
+    // this.redirectUser();
     
   }
 
-  
+  initialUser = () => {
+    this.props.history.push('/setup');
+  }
+
   redirectUser = () => {
     this.props.history.push('/');
   };

@@ -6,14 +6,16 @@ class Sidebar extends Component {
     constructor(props){
         super(props);
         this.state = {
-            modelLinks: UniversityConn.getSideModels()
+            
         }
         
     }
 
     componentDidMount() {
-        const { modelLinks } = this.state;
-        console.log(modelLinks);
+      
+       
+        console.log("mounted sidebar", this.props.modelLinks);
+
     }
 
     onClick(){
@@ -23,7 +25,7 @@ class Sidebar extends Component {
 
     render(){
         const{ setActiveMainPage } = this.props;
-        const { modelLinks } = this.state;
+        const { modelLinks } = this.props;
         console.log(modelLinks);
         return(
             <div className="Sidebar-Wrapper border">

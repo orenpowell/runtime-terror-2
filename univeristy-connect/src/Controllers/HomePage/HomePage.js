@@ -3,6 +3,7 @@ import Header from '../Header/Header';
 import SideBar from '../SideBar/Sidebar';
 import Main from '../Main/Main';
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import universityConn from '../../UniversityConnect'
 
 import './HomePage.css'
 class HomePage extends React.Component {
@@ -14,6 +15,8 @@ class HomePage extends React.Component {
     }
 
     componentDidMount(){
+        console.log("mounted homepage");
+        console.log(universityConn.getSideModels(), universityConn.getModels())
 
     }
 
@@ -33,12 +36,15 @@ class HomePage extends React.Component {
                     <div className="Sidebar col col-lg-2">
                         <SideBar
                             setActiveMainPage={(a) => this.setActiveMainPage(a)}
+                            modelLinks={universityConn.getSideModels()}
                         />
                     </div>
                     <div className="Main col col-lg-10">
                     
                         <Main
                             activeMainPage={activeMainPage}
+                            getModels={universityConn.getModels()}
+
                         />
                     </div>
                 </div>

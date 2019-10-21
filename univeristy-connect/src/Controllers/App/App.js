@@ -4,9 +4,9 @@ import Login from '../Login/login'
 import HomePage from '../HomePage/HomePage'
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import InitialLoginPage from '../../Controllers/InitialLoadPage/InitialLoadPage'
-import '../../universityConnect-registry'
-import privateRoute from '../../Components/PrivateRoute/PrivateRoute'
+//import '../../universityConnect-registry'
 import PrivateRoute from '../../Components/PrivateRoute/PrivateRoute';
+import uniconn from '../../UniversityConnect'
 
 
 class App extends React.Component {
@@ -23,12 +23,8 @@ class App extends React.Component {
   }
 
   onHandleSetup(event) {
-    event.preventDefault()
-    const data = new FormData(event.target);
     
-   
     
-    this.setState({initialLogin: false});
   }
 
    onConfirmLogin(){
@@ -39,6 +35,7 @@ class App extends React.Component {
 
   render(){
     const { loggedIn, onConfirmLogin, initialLogin } = this.state;
+    
   return(
     // <Router>
     //   { loggedIn ? (initialLogin ? <InitialLoginPage 
@@ -54,6 +51,7 @@ class App extends React.Component {
       <Switch>
         
         <Route path="/auth/login" component={Login}></Route>
+        <PrivateRoute path='/setup' component={InitialLoginPage}></PrivateRoute>
         <PrivateRoute path="/" component= {HomePage}/>
       </Switch>
     </Router>

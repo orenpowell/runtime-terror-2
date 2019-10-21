@@ -23,26 +23,19 @@ const formatQueryParams = (params) => {
       throw error;
     });
     }
- const req = (url, options = {}) => {
-     console.log(url, options);
-
-     const setup ={
-        url,
-        auth: {
-            username: options.user_name,
-            password: options.password
-        }
-     };
-    request.get(setup, (res) =>
-    {
-    // if (err) {
-    //     return console.error('Request failed:', err);
-    // }
-    console.log(res);
-});
-
-    //.then(this.checkStatus)
-   
+    
+ const req = (url, options = {}, callback) => {
+    console.log(url, options);
+  
+    const setup ={
+    url,
+    auth: {
+        username: options.user_name,
+        password: options.password
+    }
+    };
+     request.get(setup, callback);
+    
 }
 
 export default req;
