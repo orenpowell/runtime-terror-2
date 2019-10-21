@@ -15,7 +15,7 @@ class LoadPage extends Component {
     render() {
         return (
             <div className="LoadPage-Wrapper container">
-                <form onSubmit={e => this.props.handleSubmit(e)}>
+                <form onSubmit={e => this.props.handleSubmit(e)} >
                     
                         {/* <label for="first_name">First Name</label>
                         <input type="text" id="first_name" ></input>

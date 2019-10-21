@@ -29,7 +29,7 @@ class MyEvents extends Component{
 }
 
 export default UniversityConn.registerModel({
-    path: '/Components/MyEvents/MyEvents',
+    path: '/MyEvents',
     Component: MyEvents,
     title: 'My Events',
 

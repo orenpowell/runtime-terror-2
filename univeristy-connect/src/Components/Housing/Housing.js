@@ -27,7 +27,7 @@ class Housing extends Component{
 }
 
 export default UniversityConn.registerModel({
-    path: '/Components/Housing/Housing',
+    path: '/Housing',
     Component: Housing,
     title: 'Housing',
 

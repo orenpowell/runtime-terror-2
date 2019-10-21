@@ -2,12 +2,11 @@ import React from 'react';
 import './App.css';
 import Login from '../Login/login'
 import HomePage from '../HomePage/HomePage'
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import InitialLoginPage from '../../Controllers/InitialLoadPage/InitialLoadPage'
-
-
 import '../../universityConnect-registry'
-
+import privateRoute from '../../Components/PrivateRoute/PrivateRoute'
+import PrivateRoute from '../../Components/PrivateRoute/PrivateRoute';
 
 
 class App extends React.Component {
@@ -26,7 +25,9 @@ class App extends React.Component {
   onHandleSetup(event) {
     event.preventDefault()
     const data = new FormData(event.target);
-    console.log(data.keys());
+    
+   
+    
     this.setState({initialLogin: false});
   }
 
@@ -39,17 +40,23 @@ class App extends React.Component {
   render(){
     const { loggedIn, onConfirmLogin, initialLogin } = this.state;
   return(
-    <Router>
-      { loggedIn ? (initialLogin ? <InitialLoginPage 
-      handleSubmit={(data) => this.onHandleSetup(data)}
-      ></InitialLoginPage> : <HomePage></HomePage>) :
-      <Login
-        confirmLogin={() => this.onConfirmLogin()}
-      ></Login>
-      }
-    </Router>
+    // <Router>
+    //   { loggedIn ? (initialLogin ? <InitialLoginPage 
+    //   handleSubmit={(data) => this.onHandleSetup(data)}
+    //   ></InitialLoginPage> : <HomePage></HomePage>) :
+    //   <Login
+    //     confirmLogin={() => this.onConfirmLogin()}
+    //   ></Login>
+    //   }
+    // </Router>
     
-  
+    <Router>
+      <Switch>
+        
+        <Route path="/auth/login" component={Login}></Route>
+        <PrivateRoute path="/" component= {HomePage}/>
+      </Switch>
+    </Router>
   )
   }
 }

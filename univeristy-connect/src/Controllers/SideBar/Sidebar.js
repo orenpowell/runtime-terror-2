@@ -24,13 +24,14 @@ class Sidebar extends Component {
     render(){
         const{ setActiveMainPage } = this.props;
         const { modelLinks } = this.state;
+        console.log(modelLinks);
         return(
             <div className="Sidebar-Wrapper border">
-                <img src="/media/unknown.jpg" class="profile-photo" />
+                <img src="/media/unknown.jpg" className="profile-photo" />
                 {modelLinks.map((item, i) => {
                     return (
-
-                        <ul onClick={() => setActiveMainPage(item)} key={item.title + i}>
+                        
+                        <ul onClick={() => this.props.setActiveMainPage(item)} key={item.title + i}>
                             
                             <Link 
                                 to={item.path}>
@@ -39,7 +40,7 @@ class Sidebar extends Component {
                     )
                 })}
                 <br></br>
-                <img src="/media/UWFLogo.png" class="university-logo" />
+                <img src="/media/UWFLogo.png" className="university-logo" />
             </div>
 
         )

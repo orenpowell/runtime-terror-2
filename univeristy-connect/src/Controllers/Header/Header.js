@@ -23,7 +23,7 @@ class Header extends Component{
             <div className="HomePage-wrapper border" id="Header">
                 <div className="Header-Search-wrapper col-lg-6 float-left">
                     <div className="input-group center-block">
-                    <div className="zip col-lg-9" class="search">
+                    <div className="zip col-lg-9 search" >
                         <span className="fa fa-search"></span>
                         <input type="text" /*className="form-control"*/ placeholder="Search...."></input>
                     </div>

@@ -24,7 +24,7 @@ class MyProfile extends Component {
 }
 
 export default UniversityConn.registerModel({
-    path: '/Components/MyProfile/MyProfile',
+    path: '/MyProfile',
     Component: MyProfile,
     title: 'My Profile',
 

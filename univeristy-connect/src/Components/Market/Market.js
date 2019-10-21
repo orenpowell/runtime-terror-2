@@ -29,7 +29,7 @@ class Market extends Component{
 }
 
 export default UniversityConn.registerModel({
-    path: '/Components/Market/Market',
+    path: '/Market',
     Component: Market,
     title: 'Market',
 
