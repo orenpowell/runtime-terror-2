@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import UniversityConn from '../../UniversityConnect';
 import SearchBar from '../../Models/SearchBar/SearchBar'
 import Feed from '../../Models/Feed/Feed'
-class MyEvents extends Component{
+
+class Market extends Component{
     constructor(props){
         super(props);
         this.state = {
-            allEvents: [],
-            searchEvents: null,
-            searchItem: null
+            catalog: [],
+            search: ''
         }
     }
 
@@ -18,10 +18,10 @@ class MyEvents extends Component{
 
     render(){
         return(
-            <div className="MyEvents-Wrapper">
-                <p>Welcome to my Events</p>
-            <SearchBar></SearchBar>
-            <Feed></Feed>
+            <div className="Housing-Wrapper">
+                <p>Welcome market</p>
+                <SearchBar></SearchBar>
+                <Feed></Feed>
 
             </div>
         )
@@ -29,10 +29,10 @@ class MyEvents extends Component{
 }
 
 export default UniversityConn.registerModel({
-    path: '/MyEvents',
-    Component: MyEvents,
-    title: 'My Events',
+    path: '/Market',
+    Component: Market,
+    title: 'Market',
 
-    type: 'model',
-    icon: 'calendar-day'
+    type: 'addon',
+    icon: 'shopping-cart'
 })

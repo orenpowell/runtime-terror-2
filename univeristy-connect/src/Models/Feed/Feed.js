@@ -5,43 +5,43 @@ const Feed = (props) => {
     return (
         <div className="Feed-Wrapper">
             <div className="card-columns">
-                <div class="card">
-                <img src="..." class="card-img-top" alt="..."/>
-                <div class="card-body">
-                    <h5 class="card-title">Title of the card</h5>
-                    <p class="card-text">info of the item</p>
+                <div className="card">
+                <img src="..." className="card-img-top" alt="..."/>
+                <div className="card-body">
+                    <h5 className="card-title">Title of the card</h5>
+                    <p className="card-text">info of the item</p>
                 </div>
                 </div>
 
-                <div class="card">
-                <img src="..." class="card-img-top" alt="..."/>
-                <div class="card-body">
-                    <h5 class="card-title">Title of the card</h5>
-                    <p class="card-text">info of the item</p>
+                <div className="card">
+                <img src="..." className="card-img-top" alt="..."/>
+                <div className="card-body">
+                    <h5 className="card-title">Title of the card</h5>
+                    <p className="card-text">info of the item</p>
                 </div>
                 </div>
 
-                <div class="card">
-                <img src="..." class="card-img-top" alt="..."/>
-                <div class="card-body">
-                    <h5 class="card-title">Title of the card</h5>
-                    <p class="card-text">info of the item</p>
+                <div className="card">
+                <img src="..." className="card-img-top" alt="..."/>
+                <div className="card-body">
+                    <h5 className="card-title">Title of the card</h5>
+                    <p className="card-text">info of the item</p>
                 </div>
                 </div>
 
-                <div class="card">
-                <img src="..." class="card-img-top" alt="..."/>
-                <div class="card-body">
-                    <h5 class="card-title">Title of the card</h5>
-                    <p class="card-text">info of the item</p>
+                <div className="card">
+                <img src="..." className="card-img-top" alt="..."/>
+                <div className="card-body">
+                    <h5 className="card-title">Title of the card</h5>
+                    <p className="card-text">info of the item</p>
                 </div>
                 </div>
 
-                <div class="card">
-                <img src="..." class="card-img-top" alt="..."/>
-                <div class="card-body">
-                    <h5 class="card-title">Title of the card</h5>
-                    <p class="card-text">info of the item</p>
+                <div className="card">
+                <img src="..." className="card-img-top" alt="..."/>
+                <div className="card-body">
+                    <h5 className="card-title">Title of the card</h5>
+                    <p className="card-text">info of the item</p>
                 </div>
                 </div>
 

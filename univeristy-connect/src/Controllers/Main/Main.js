@@ -13,12 +13,16 @@ class Main extends Component {
       }
 
     componentDidMount(){
+        console.log(this.props.getModels);
 
     }
 
     render() {
-        const routes = UniversityConn.getModels();
+        const routes = this.props.getModels;
         console.log(routes);
+
+        const current = routes.filter((route, index) => route.path === this.props.activeMainPage);
+        console.log(current);
         const routeList = routes.map((route, index) => {
             return(
                 //<div className="Main-Wrapper border" id="Main">

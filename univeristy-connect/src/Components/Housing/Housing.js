@@ -2,13 +2,11 @@ import React, { Component } from 'react';
 import UniversityConn from '../../UniversityConnect';
 import SearchBar from '../../Models/SearchBar/SearchBar'
 import Feed from '../../Models/Feed/Feed'
-class MyEvents extends Component{
+class Housing extends Component{
     constructor(props){
         super(props);
         this.state = {
-            allEvents: [],
-            searchEvents: null,
-            searchItem: null
+            availableHousing: []
         }
     }
 
@@ -18,8 +16,8 @@ class MyEvents extends Component{
 
     render(){
         return(
-            <div className="MyEvents-Wrapper">
-                <p>Welcome to my Events</p>
+            <div className="Housing-Wrapper">
+                <p>Welcome Housing</p>
             <SearchBar></SearchBar>
             <Feed></Feed>
 
@@ -29,10 +27,10 @@ class MyEvents extends Component{
 }
 
 export default UniversityConn.registerModel({
-    path: '/MyEvents',
-    Component: MyEvents,
-    title: 'My Events',
+    path: '/Housing',
+    Component: Housing,
+    title: 'Housing',
 
-    type: 'model',
-    icon: 'calendar-day'
+    type: 'addon',
+    icon: 'home'
 })

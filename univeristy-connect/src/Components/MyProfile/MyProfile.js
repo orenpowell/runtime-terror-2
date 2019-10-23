@@ -17,15 +17,16 @@ class MyProfile extends Component {
     render(){
         return(
             <div className="MyProfile-Wrapper">
-                <p>Welcome to my Profile</p>
-                <SearchBar></SearchBar>
+                
             </div>
         )
     }
 }
 
 export default UniversityConn.registerModel({
-    path: '/Components/MyProfile/MyProfile',
+    path: '/MyProfile',
     Component: MyProfile,
-    title: 'My Profile'
+    title: 'My Profile',
+
+    type: 'model'
 })

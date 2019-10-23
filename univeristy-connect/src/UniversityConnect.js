@@ -1,19 +1,35 @@
 const Models = [];
-
+const sideModels = []
+const topModels = []
 const registerModel = (model) => {
-    console.log(model);
+    
     Models.push(model);
+    if(model.type ==='model')
+        sideModels.push(model);
+    if(model.type === 'addon')
+        topModels.push(model);
+    console.log("pushing")
+   
 };
+
+const getSideModels = () => {
+    return sideModels;
+}
 
 const getModels = () => {
     return Models;
 }
 
+const getAddons = () => {
+    return topModels;
+}
 
 
 const UniversityConn = {
     registerModel,
-    getModels
+    getModels,
+    getAddons,
+    getSideModels
 }
 
 window.UniversityConn = UniversityConn;

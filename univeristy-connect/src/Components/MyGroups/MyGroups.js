@@ -26,7 +26,9 @@ class MyGroups extends Component {
 }
 
 export default UniversityConn.registerModel({
-    path: '/Components/MyGroups/MyGroups',
+    path: '/MyGroups',
     Component: MyGroups,
-    title: 'My Groups'
+    title: 'My Groups',
+
+    type: 'model'
 })

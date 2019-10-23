@@ -25,6 +25,7 @@ class WelcomePage extends Component {
                 {catalog.titles.map((title, e) => {
                     return(
                     <TopDisplay 
+                        key={title}
                         title={title}
                     ></TopDisplay>
                     )
@@ -40,5 +41,7 @@ class WelcomePage extends Component {
 export default UniversityConn.registerModel({
     path: '/',
     Component: WelcomePage,
-    title: 'Home'
+    title: 'Home',
+
+    type: 'model'
 })

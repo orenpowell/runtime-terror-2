@@ -6,14 +6,16 @@ class Sidebar extends Component {
     constructor(props){
         super(props);
         this.state = {
-            modelLinks: UniversityConn.getModels()
+            
         }
         
     }
 
     componentDidMount() {
-        const { modelLinks } = this.state;
-        console.log(modelLinks);
+      
+       
+        console.log("mounted sidebar", this.props.modelLinks);
+
     }
 
     onClick(){
@@ -23,13 +25,15 @@ class Sidebar extends Component {
 
     render(){
         const{ setActiveMainPage } = this.props;
-        const { modelLinks } = this.state;
+        const { modelLinks } = this.props;
+        console.log(modelLinks);
         return(
             <div className="Sidebar-Wrapper border">
+                <img src="/media/unknown.jpg" className="profile-photo" />
                 {modelLinks.map((item, i) => {
                     return (
-
-                        <ul onClick={() => setActiveMainPage(item)} key={item.title + i}>
+                        
+                        <ul onClick={() => this.props.setActiveMainPage(item)} key={item.title + i}>
                             
                             <Link 
                                 to={item.path}>
@@ -37,8 +41,10 @@ class Sidebar extends Component {
                             </Link></ul>
                     )
                 })}
+                <br></br>
+                <img src="/media/UWFLogo.png" className="university-logo" />
             </div>
-            
+
         )
     }
 }
