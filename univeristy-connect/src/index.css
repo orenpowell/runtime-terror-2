@@ -13,17 +13,53 @@ code {
     monospace;
 }
 
+.HomePage-Wrapper
+{
+    width: 100%;
+    margin: 0px !important;
+    padding: 0px !important;
+    max-width: inherit;
+}
+
 .Header
 {
   background-color: #D5E3FB;
 }
+
+.card-deck
+{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  background-color: #FFFFFF;
+}
+
+.MainDisplay
+{
+  margin: 10px;
+}
+
+.border {
+  border: none!important;
+}
+
+.topdisplay-wrapper
+{
+  width: 100%;
+  margin: 0px !important;
+  padding: 0px !important;
+  max-width: inherit;
+}
+
 .Welcome-Wrapper
 {
-  background-color: #FFFFFF;
+  background-color: #F7F6F6;
   color: #5A9BF4;
   font-size: 1.25rem;
   font-weight: 500;
   line-height: 1.2;
+  border: none!important;
 }
 .Sidebar-Wrapper
 {
