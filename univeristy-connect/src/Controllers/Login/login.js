@@ -61,6 +61,9 @@ class Login extends Component {
         <img src="/media/UWFLogo.png" className="login-logo"/>
         <img src="/media/LoginPhoto.jpg" className="login-photo"/>
         <div className="Login-wrapper container">  
+        <div className="input-group center-block login-header">
+            University Connect
+        </div>
         <div className="input-group center-block">
           <div className="zip col-lg-4">
             <input type="text" onChange={this.handleChange} name='user_name' className="form-control" placeholder="Username..."></input>

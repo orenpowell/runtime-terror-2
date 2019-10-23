@@ -2,3 +2,9 @@
     position: absolute;
     bottom: 50%;
 }
+.login-header
+{
+    left: 33.33%;
+    color: #428df4;
+    font-size: -webkit-xxx-large;
+}
