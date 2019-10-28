@@ -66,17 +66,20 @@ class Login extends Component {
         </div>
         <div className="input-group center-block">
           <div className="zip col-lg-4">
+            Username
             <input type="text" onChange={this.handleChange} name='user_name' className="form-control" placeholder="Username..."></input>
           </div>
           </div>
           <div className="input-group center-block">
           <div className="zip col-lg-4">
+            Password
             <input type="text" onChange={this.handleChange} name='password' className="form-control" placeholder="Password...."></input>
+            <a href="#" className="LoginLeft">Terms of Service</a> <a href="#" className="LoginRight">Forgot Passowrd?</a>
           </div>
           </div>
           <div className="input-group center-block">
-          <div className="col-lg-4">
-            <button className='btn-primary' onClick={this.handleSubmit} >
+          <div className="col-lg-4" align="center">
+            <button className='btn-primary bttnConnect' onClick={this.handleSubmit} >
               Connect
             </button>
           </div>
