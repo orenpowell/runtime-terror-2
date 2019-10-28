@@ -72,7 +72,7 @@ const auth = {
       return sessionStorage.setItem(key, stringify(value));
     }
 
-    return null;
+    /*return null;*/return sessionStorage.setItem(key, stringify(value));
   },
 
   setToken(value = '',  tokenKey, isLocalStorage = true) {

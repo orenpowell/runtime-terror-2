@@ -19,6 +19,8 @@ class Login extends Component {
   }, () => console.log(this.state.value));
 
   handleSubmit = (e) => {
+    this.redirectUser('/setup');
+    /*
     e.preventDefault();
     const body = this.state.value;
     const requestURL = 'http://localhost:3001/userValidation';
@@ -42,7 +44,7 @@ class Login extends Component {
    
     // auth.setToken('aam60', 'loginUser' )
     // this.redirectUser();
-    
+    */
   }
 
   initialUser = () => {
@@ -50,7 +52,7 @@ class Login extends Component {
   }
 
   redirectUser = () => {
-    this.props.history.push('/');
+    this.props.history.push('/setup');
   };
 
   render(){
@@ -73,8 +75,8 @@ class Login extends Component {
           <div className="input-group center-block">
           <div className="zip col-lg-4">
             Password
-            <input type="text" onChange={this.handleChange} name='password' className="form-control" placeholder="Password...."></input>
-            <a href="#" className="LoginLeft">Terms of Service</a> <a href="#" className="LoginRight">Forgot Passowrd?</a>
+            <input type="password" onChange={this.handleChange} name='password' className="form-control" placeholder="Password...."></input>
+            <a href="/setup" className="LoginLeft">Terms of Service</a> <a href="#" className="LoginRight">Forgot Passowrd?</a>
           </div>
           </div>
           <div className="input-group center-block">
