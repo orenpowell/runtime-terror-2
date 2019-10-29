@@ -13,17 +13,15 @@ class Main extends Component {
       }
 
     componentDidMount(){
-        console.log(this.props.getModels);
 
     }
 
     render() {
-        const routes = this.props.getModels;
-        console.log(routes);
-
+        const routes = window.Models;
         const current = routes.filter((route, index) => route.path === this.props.activeMainPage);
-        console.log(current);
+       
         const routeList = routes.map((route, index) => {
+           
             return(
                 //<div className="Main-Wrapper border" id="Main">
                 <Route
@@ -45,6 +43,7 @@ class Main extends Component {
         });
         return (
             <div className="Main-Wrapper border" id="Main">
+                
                  <Switch>{routeList}</Switch>
             </div>
            

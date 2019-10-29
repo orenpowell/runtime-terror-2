@@ -1,27 +1,25 @@
-const Models = [];
-const sideModels = []
-const topModels = []
+window.Models = [];
+window.sideModels = []
+window.topModels = []
 const registerModel = (model) => {
     
-    Models.push(model);
+    window.Models.push(model);
     if(model.type ==='model')
-        sideModels.push(model);
+        window.sideModels.push(model);
     if(model.type === 'addon')
-        topModels.push(model);
-    console.log("pushing")
-   
+        window.topModels.push(model);   
 };
 
 const getSideModels = () => {
-    return sideModels;
+    return window.sideModels;
 }
 
 const getModels = () => {
-    return Models;
+    return window.Models;
 }
 
 const getAddons = () => {
-    return topModels;
+    return window.topModels;
 }
 
 
