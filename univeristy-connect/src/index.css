@@ -57,8 +57,20 @@ code {
 }
 @media(max-width: 991px){
 #Header {
-  height: 100px!important;}
+  /*height: 100px!important;*/}
+  .icon-wrapper
+  {
+    margin-top: -32px;
+  }
 }
+@media(max-width: 540px)
+{
+  .search input
+  {
+    width: 80%;
+  }
+}
+
 
 .card-deck
 {
@@ -106,16 +118,7 @@ code {
 .col-md-4 {
   max-width: 50%;
 }
-.profile-photo
-{
-  width: 100%;
-  padding: 25px;
-}
-.university-logo
-{
-  width: 100%;
-  padding: 25px;
-}
+
 .form-control
 {
   border-radius: 1rem;
@@ -139,4 +142,10 @@ code {
 
   left: 33%;
   margin: 10px;
+}
+
+.icon-wrapper
+{
+  float: right;
+  padding-right: 15px;
 }
