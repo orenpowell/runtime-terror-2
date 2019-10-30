@@ -50,7 +50,7 @@ class App extends React.Component {
     <Router>
       <Switch>
         
-        <Route path="/auth/login" component={Login}></Route>
+        <Route path="/auth/login" component={InitialLoginPage}></Route>
         <PrivateRoute path='/setup' component={InitialLoginPage}></PrivateRoute>
         <PrivateRoute path="/" component= {HomePage}/>
       </Switch>
