@@ -265,7 +265,7 @@ class LoadPage extends Component {
                             <div className="input-group-prepend">
                                 <span className="input-group-text">Hobbies</span>
                             </div>
-                            <select name="Hobbies" className="form-control" id="hobbies">
+                            <select multiple name="Hobbies" className="form-control" id="hobbies">
                             <option value="1">3D printing</option>
                             <option value="2">Acrobatics</option>
                             <option value="3">Acting</option>
