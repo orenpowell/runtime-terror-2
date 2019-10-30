@@ -4,7 +4,7 @@ import Login from '../Login/login'
 import HomePage from '../HomePage/HomePage'
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import InitialLoginPage from '../../Controllers/InitialLoadPage/InitialLoadPage'
-//import '../../universityConnect-registry'
+import '../../universityConnect-registry'
 import PrivateRoute from '../../Components/PrivateRoute/PrivateRoute';
 import uniconn from '../../UniversityConnect'
 
@@ -15,7 +15,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       loggedIn: false,
-      initialLogin: true    }
+      initialLogin: true  }
   }
 
   componentDidMount() {

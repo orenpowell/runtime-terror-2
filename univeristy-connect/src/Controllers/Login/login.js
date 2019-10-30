@@ -19,8 +19,6 @@ class Login extends Component {
   }, () => console.log(this.state.value));
 
   handleSubmit = (e) => {
-    this.redirectUser('/setup');
-    /*
     e.preventDefault();
     const body = this.state.value;
     const requestURL = 'http://localhost:3001/userValidation';
@@ -41,10 +39,6 @@ class Login extends Component {
         }
       }
     });
-   
-    // auth.setToken('aam60', 'loginUser' )
-    // this.redirectUser();
-    */
   }
 
   initialUser = () => {
@@ -52,7 +46,7 @@ class Login extends Component {
   }
 
   redirectUser = () => {
-    this.props.history.push('/setup');
+    this.props.history.push('/');
   };
 
   render(){
@@ -63,25 +57,19 @@ class Login extends Component {
         <img src="/media/UWFLogo.png" className="login-logo"/>
         <img src="/media/LoginPhoto.jpg" className="login-photo"/>
         <div className="Login-wrapper container">  
-        <div className="input-group center-block login-header">
-            University Connect
-        </div>
         <div className="input-group center-block">
           <div className="zip col-lg-4">
-            Username
             <input type="text" onChange={this.handleChange} name='user_name' className="form-control" placeholder="Username..."></input>
           </div>
           </div>
           <div className="input-group center-block">
           <div className="zip col-lg-4">
-            Password
             <input type="password" onChange={this.handleChange} name='password' className="form-control" placeholder="Password...."></input>
-            <a href="/setup" className="LoginLeft">Terms of Service</a> <a href="#" className="LoginRight">Forgot Passowrd?</a>
           </div>
           </div>
           <div className="input-group center-block">
-          <div className="col-lg-4" align="center">
-            <button className='btn-primary bttnConnect' onClick={this.handleSubmit} >
+          <div className="col-lg-4">
+            <button className='btn-primary bttnConnect' onClick={this.handleSubmit} > 
               Connect
             </button>
           </div>
