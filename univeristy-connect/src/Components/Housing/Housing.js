@@ -6,7 +6,8 @@ class Housing extends Component{
     constructor(props){
         super(props);
         this.state = {
-            availableHousing: []
+            availableHousing: [],
+            houseType: []
         }
     }
 
@@ -18,9 +19,11 @@ class Housing extends Component{
         return(
             <div className="Housing-Wrapper">
                 <p>Welcome Housing</p>
-            <SearchBar></SearchBar>
-            <Feed></Feed>
-
+                <div className='row'> 
+                    <div class="btn mr-2" aria-label="First group">
+                        <button type="button" class="btn btn-secondary">1</button>
+                    </div>
+                </div>
             </div>
         )
     }

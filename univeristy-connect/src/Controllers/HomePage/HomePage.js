@@ -5,18 +5,21 @@ import Main from '../Main/Main';
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import universityConn from '../../UniversityConnect'
 
+
 import './HomePage.css'
 class HomePage extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            setActiveMainPage: ''
+            setActiveMainPage: '',
+            loadingDone: false,
         }
     }
 
     componentDidMount(){
-        console.log("mounted homepage");
-        console.log(universityConn.getSideModels(), universityConn.getModels())
+        setTimeout(() => {
+           this.setState({loadingDone: true}); 
+        }, 1000)
 
     }
 
@@ -25,9 +28,9 @@ class HomePage extends React.Component {
     }
 
     render(){
-
-        const {activeMainPage} = this.state;
+        const {setActiveMainPage, loadingDone} = this.state;
         return(
+            loadingDone ? 
             <div className="HomePage-Wrapper container" id="HomePage" >
                 <div className="Header">
                     <Header></Header>
@@ -42,13 +45,13 @@ class HomePage extends React.Component {
                     <div className="Main col col-lg-10">
                     
                         <Main
-                            activeMainPage={activeMainPage}
+                            activeMainPage={setActiveMainPage}
                             getModels={universityConn.getModels()}
 
                         />
                     </div>
                 </div>
-            </div>
+            </div> : null
         )
     }
 }

@@ -12,9 +12,6 @@ class Sidebar extends Component {
     }
 
     componentDidMount() {
-      
-       
-        console.log("mounted sidebar", this.props.modelLinks);
 
     }
 
@@ -26,7 +23,7 @@ class Sidebar extends Component {
     render(){
         const{ setActiveMainPage } = this.props;
         const { modelLinks } = this.props;
-        console.log(modelLinks);
+       
         return(
             <div className="Sidebar-Wrapper border">
                 <img src="/media/unknown.jpg" className="profile-photo" />
