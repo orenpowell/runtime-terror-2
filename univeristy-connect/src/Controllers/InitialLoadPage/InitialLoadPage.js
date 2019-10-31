@@ -245,7 +245,6 @@ class LoadPage extends Component {
                             <option value="2">Female</option>
                             <option value="3">Neutral</option>
                             </select>
-                        
                         </div> 
 
 
@@ -286,13 +285,6 @@ class LoadPage extends Component {
                             <option value="8" selected>Rather Not Say</option>
                             </select>
                         </div> 
-
-                        <div className="input-group col-md-auto mb-3">
-                            <div className="input-group-prepend">
-                                <span className="input-group-text">Favorite Food</span>
-                            </div>
-                            <input name ="food" type="text" className="form-control" id="food"/>
-                        </div>
 
 
                         <div className="input-group col-md-auto mb-3">
@@ -340,6 +332,14 @@ class LoadPage extends Component {
 
                         <div className="input-group col-md-auto mb-3">
                             <div className="input-group-prepend">
+                                <span className="input-group-text">Favorite Food</span>
+                            </div>
+                            <input name ="food" type="text" className="form-control" id="food"/>
+                        </div>
+
+
+                        <div className="input-group col-md-auto mb-3">
+                            <div className="input-group-prepend">
                                 <span className="input-group-text">Do you Drink?</span>
                             </div>
                             <select name="drink" className="form-control" id="drink">
@@ -366,7 +366,292 @@ class LoadPage extends Component {
 
                         <div className="input-group col-md-auto mb-3">
                             <div className="input-group-prepend">
-                                <span className="input-group-text">Hobbies</span>
+                                <span className="input-group-text">Movies</span>
+                            </div>
+                            <select multiple name="movies" className="form-control" id="movies">
+                            <option value="1">Action</option>
+                            <option value="2">Adventure</option>
+                            <option value="3">Comedy</option>
+                            <option value="4">Crime</option>
+                            <option value="5">Drama</option>
+                            <option value="6">Fantasy</option>
+                            <option value="7">History</option>
+                            <option value="8">Horror</option>
+                            <option value="9">Musical</option>
+                            <option value="10">Mystery</option>
+                            <option value="11">Romance</option>
+                            <option value="12">Sci-Fi</option>
+                            <option value="13">War</option>
+                            <option value="14">Other</option>
+                            </select>
+                        </div> 
+
+
+                        <div className="input-group col-md-auto mb-3">
+                            <div className="input-group-prepend">
+                                <span className="input-group-text">Books</span>
+                            </div>
+                            <select multiple name="books" className="form-control" id="books">
+                            <option value="1">Science Fiction </option>
+                            <option value="2">Satire</option>
+                            <option value="3">Drama</option>
+                            <option value="4">Action and Adventure</option>
+                            <option value="5">Romance</option>
+                            <option value="6">Mystery</option>
+                            <option value="7">Horror</option>
+                            <option value="8">Self Help</option>
+                            <option value="9">Guide</option>
+                            <option value="10">Travel</option>
+                            <option value="11">Children's</option>
+                            <option value="12">Religious</option>
+                            <option value="13">Science</option>
+                            <option value="14">History</option>
+                            <option value="15">Math</option>
+                            <option value="16">Anthologies</option>
+                            <option value="17">Poetry</option>
+                            <option value="18">Encyclopedia</option>
+                            <option value="19">Dictionaries</option>
+                            <option value="20">Comics</option>
+                            <option value="21">Art</option>
+                            <option value="22">Cookbooks</option>
+                            <option value="23">Diaries</option>
+                            <option value="24">Prayer books</option>
+                            <option value="25">Series</option>
+                            <option value="26">Trilogies</option>
+                            <option value="27">Biographies</option>
+                            <option value="28">Autobiographies</option>
+                            <option value="29">Fantasy</option>
+                            <option value="30">Other</option>
+                            </select>
+                        </div> 
+
+
+                        <div className="input-group col-md-auto mb-3">
+                            <div className="input-group-prepend">
+                                <span className="input-group-text">Music</span>
+                            </div>
+                            <select multiple name="music" className="form-control" id="music">
+                            <option value="1">Musical theatre</option>
+                            <option value="2">Classical music</option>
+                            <option value="3">Jazz</option>
+                            <option value="4">Popular music</option>
+                            <option value="5">Folk music</option>
+                            <option value="6">Rock</option>
+                            <option value="7">Blues</option>
+                            <option value="8">Singing</option>
+                            <option value="9">Country music</option>
+                            <option value="10">Hip hop music</option>
+                            <option value="11">Heavy metal</option>
+                            <option value="12">Orchestra</option>
+                            <option value="13">Reggae</option>
+                            <option value="14">Pop music</option>
+                            <option value="15">Baroque music</option>
+                            <option value="16">Instrumental</option>
+                            <option value="17">Soul music</option>
+                            <option value="18">Electronic dance music</option>
+                            <option value="19">Funk</option>
+                            <option value="20">Rhythm and blues</option>
+                            <option value="21">Rapping</option>
+                            <option value="22">Techno</option>
+                            <option value="23">Soundtrack</option>
+                            <option value="24">Opera</option>
+                            <option value="25">Ambient music</option>
+                            <option value="26">Alternative rock</option>
+                            <option value="27">Punk rock</option>
+                            <option value="28">Dance music</option>
+                            <option value="29">World music</option>
+                            <option value="30">Disco</option>
+                            <option value="31">Gospel music</option>
+                            <option value="32">Romantic music</option>
+                            <option value="33">Chant</option>
+                            <option value="34">Progressive rock</option>
+                            <option value="35">Trance music</option>
+                            <option value="36">Dubstep</option>
+                            <option value="37">Medieval music</option>
+                            <option value="38">Acoustic music</option>
+                            <option value="39">Easy listening</option>
+                            <option value="40">Noise</option>
+                            <option value="41">Thrash metal</option>
+                            <option value="42">Music of Latin America</option>
+                            <option value="43">House music</option>
+                            <option value="44">Pop rock</option>
+                            <option value="45">Ska</option>
+                            <option value="46">Indie rock</option>
+                            <option value="47">Video game music</option>
+                            <option value="48">Death metal</option>
+                            <option value="49">Vocal music</option>
+                            <option value="50">Drum and bass</option>
+                            <option value="51">Grunge</option>
+                            </select>
+                        </div>
+
+                        <div className="input-group col-md-auto mb-3">
+                            <div className="input-group-prepend">
+                                <span className="input-group-text">Video/Board Games</span>
+                            </div>
+                            <select multiple name="games" className="form-control" id="games">
+                            <option value="1">Action</option>
+                            <option value="2">Action-Adventure</option>
+                            <option value="3">Adventure</option>
+                            <option value="4">Role-Playing</option>
+                            <option value="5">Simulation</option>
+                            <option value="6">Strategy</option>
+                            <option value="7">Sports</option>
+                            <option value="8">Puzzle</option>
+                            <option value="9">Idle</option>
+                            <option value="10">Other</option>
+                            </select>
+                        </div>
+
+                        <div className="input-group col-md-auto mb-3">
+                            <div className="input-group-prepend">
+                                <span className="input-group-text">Sports and Outdoors</span>
+                            </div>
+                            <select multiple name="sports" className="form-control" id="sports">
+                            <option value="1">abseiling</option>
+                            <option value="2">aerobics</option>
+                            <option value="3">aikido</option>
+                            <option value="4">airsoft</option>
+                            <option value="5">aquathlon</option>
+                            <option value="6">archery</option>
+                            <option value="7">artistic gymnastics</option>
+                            <option value="8">badminton</option>
+                            <option value="9">ballooning</option>
+                            <option value="10">barrel racing</option>
+                            <option value="11">BASE jumping</option>
+                            <option value="12">baseball</option>
+                            <option value="13">basketball</option>
+                            <option value="14">baton twirling</option>
+                            <option value="15">biathlon</option>
+                            <option value="16">bobsleigh</option>
+                            <option value="17">bodyboarding</option>
+                            <option value="18">bodybuilding</option>
+                            <option value="19">bouldering</option>
+                            <option value="20">bowling</option>
+                            <option value="21">boxing</option>
+                            <option value="22">bridge</option>
+                            <option value="23">canoeing</option>
+                            <option value="24">capoeira</option>
+                            <option value="25">checkers</option>
+                            <option value="26">cheerleading</option>
+                            <option value="27">chess</option>
+                            <option value="28">climbing</option>
+                            <option value="29">cricket</option>
+                            <option value="30">cross-country cycling</option>
+                            <option value="31">cross-country equestrianism</option>
+                            <option value="32">cross-country running</option>
+                            <option value="33">cross-country skiing</option>
+                            <option value="34">CrossFit</option>
+                            <option value="35">curling</option>
+                            <option value="36">cycling</option>
+                            <option value="37">dancing</option>
+                            <option value="38">darts</option>
+                            <option value="39">decathlon</option>
+                            <option value="40">discus throw</option>
+                            <option value="41">diving</option>
+                            <option value="42">dodgeball</option>
+                            <option value="43">drifting</option>
+                            <option value="44">equestrianism</option>
+                            <option value="45">fencing</option>
+                            <option value="46">figure skating</option>
+                            <option value="47">foosball</option>
+                            <option value="48">football</option>
+                            <option value="49">formula racing</option>
+                            <option value="50">freediving</option>
+                            <option value="51">gliding</option>
+                            <option value="52">Go</option>
+                            <option value="53">golf</option>
+                            <option value="54">gymkhana</option>
+                            <option value="55">handball</option>
+                            <option value="56">heptathlon</option>
+                            <option value="57">hiking</option>
+                            <option value="58">hockey</option>
+                            <option value="59">horse racing</option>
+                            <option value="60">horseball</option>
+                            <option value="61">hurling</option>
+                            <option value="62">ice hockey</option>
+                            <option value="63">jogging</option>
+                            <option value="64">judo</option>
+                            <option value="65">karate</option>
+                            <option value="66">kart racing</option>
+                            <option value="67">kayaking</option>
+                            <option value="68">kendo</option>
+                            <option value="69">kickball</option>
+                            <option value="70">kickboxing</option>
+                            <option value="71">kiteboarding</option>
+                            <option value="72">kitesurfing</option>
+                            <option value="73">kung fu</option>
+                            <option value="74">lacrosse</option>
+                            <option value="75">laser tag</option>
+                            <option value="76">long jump</option>
+                            <option value="77">mahjong</option>
+                            <option value="78">marathon</option>
+                            <option value="79">mixed martial arts</option>
+                            <option value="80">mountaineering</option>
+                            <option value="81">Muay Thai</option>
+                            <option value="82">olympic swimming</option>
+                            <option value="83">paddle</option>
+                            <option value="84">paddleboarding</option>
+                            <option value="85">paintball</option>
+                            <option value="86">parachuting</option>
+                            <option value="87">paragliding</option>
+                            <option value="88">parasailing</option>
+                            <option value="89">parkour</option>
+                            <option value="90">petanque</option>
+                            <option value="91">pole vault</option>
+                            <option value="92">polo</option>
+                            <option value="93">pool</option>
+                            <option value="94">powerlifting</option>
+                            <option value="95">racewalking</option>
+                            <option value="96">racquetball</option>
+                            <option value="97">rafting</option>
+                            <option value="98">rallycross</option>
+                            <option value="99">rhythmic gymnastics</option>
+                            <option value="100">rinkball</option>
+                            <option value="101">rounders</option>
+                            <option value="102">rowing</option>
+                            <option value="103">rugby</option>
+                            <option value="104">scuba diving</option>
+                            <option value="105">skateboarding</option>
+                            <option value="106">skeleton</option>
+                            <option value="107">skibobbing</option>
+                            <option value="108">skydiving</option>
+                            <option value="109">skysurfing</option>
+                            <option value="110">snorkeling</option>
+                            <option value="111">snowboarding</option>
+                            <option value="112">soccer</option>
+                            <option value="113">softball</option>
+                            <option value="114">sprint</option>
+                            <option value="115">squash</option>
+                            <option value="116">sumo</option>
+                            <option value="117">surfing</option>
+                            <option value="118">sword-fighting</option>
+                            <option value="119">synchronized swimming</option>
+                            <option value="120">table tennis</option>
+                            <option value="121">tennis</option>
+                            <option value="122">trail running</option>
+                            <option value="123">trampolining</option>
+                            <option value="124">triathlon</option>
+                            <option value="125">tumbling</option>
+                            <option value="126">ultimate</option>
+                            <option value="127">unicycling basketball</option>
+                            <option value="128">unicycling handball</option>
+                            <option value="129">unicycling hockey</option>
+                            <option value="130">volleyball</option>
+                            <option value="131">wakeboarding</option>
+                            <option value="132">walking</option>
+                            <option value="133">water polo</option>
+                            <option value="134">weightlifting</option>
+                            <option value="135">windsurfing</option>
+                            <option value="136">wrestling</option>
+                            <option value="137">other</option>
+                            </select>
+                        </div> 
+
+
+                        <div className="input-group col-md-auto mb-3">
+                            <div className="input-group-prepend">
+                                <span className="input-group-text">Other Hobbies</span>
                             </div>
                             <select multiple name="Hobbies" className="form-control" id="hobbies">
                             <option value="1">3D printing</option>
@@ -772,128 +1057,6 @@ class LoadPage extends Component {
                             <option value="401">Traveling</option>
                             <option value="402">Whale watching</option>
                             <option value="403">Other</option>
-                            </select>
-                        </div>
-
-
-                        <div className="input-group col-md-auto mb-3">
-                            <div className="input-group-prepend">
-                                <span className="input-group-text">Movies</span>
-                            </div>
-                            <select multiple name="movies" className="form-control" id="movies">
-                            <option value="1">Action</option>
-                            <option value="2">Adventure</option>
-                            <option value="3">Comedy</option>
-                            <option value="4">Crime</option>
-                            <option value="5">Drama</option>
-                            <option value="6">Fantasy</option>
-                            <option value="7">History</option>
-                            <option value="8">Horror</option>
-                            <option value="9">Musical</option>
-                            <option value="10">Mystery</option>
-                            <option value="11">Romance</option>
-                            <option value="12">Sci-Fi</option>
-                            <option value="13">War</option>
-                            <option value="14">Other</option>
-                            </select>
-                        </div> 
-
-
-                        <div className="input-group col-md-auto mb-3">
-                            <div className="input-group-prepend">
-                                <span className="input-group-text">Books</span>
-                            </div>
-                            <select multiple name="books" className="form-control" id="books">
-                            <option value="1">Science Fiction </option>
-                            <option value="2">Satire</option>
-                            <option value="3">Drama</option>
-                            <option value="4">Action and Adventure</option>
-                            <option value="5">Romance</option>
-                            <option value="6">Mystery</option>
-                            <option value="7">Horror</option>
-                            <option value="8">Self Help</option>
-                            <option value="9">Guide</option>
-                            <option value="10">Travel</option>
-                            <option value="11">Children's</option>
-                            <option value="12">Religious</option>
-                            <option value="13">Science</option>
-                            <option value="14">History</option>
-                            <option value="15">Math</option>
-                            <option value="16">Anthologies</option>
-                            <option value="17">Poetry</option>
-                            <option value="18">Encyclopedia</option>
-                            <option value="19">Dictionaries</option>
-                            <option value="20">Comics</option>
-                            <option value="21">Art</option>
-                            <option value="22">Cookbooks</option>
-                            <option value="23">Diaries</option>
-                            <option value="24">Prayer books</option>
-                            <option value="25">Series</option>
-                            <option value="26">Trilogies</option>
-                            <option value="27">Biographies</option>
-                            <option value="28">Autobiographies</option>
-                            <option value="29">Fantasy</option>
-                            <option value="30">Other</option>
-                            </select>
-                        </div> 
-
-
-                        <div className="input-group col-md-auto mb-3">
-                            <div className="input-group-prepend">
-                                <span className="input-group-text">Music</span>
-                            </div>
-                            <select multiple name="music" className="form-control" id="music">
-                            <option value="1">Musical theatre</option>
-                            <option value="2">Classical music</option>
-                            <option value="3">Jazz</option>
-                            <option value="4">Popular music</option>
-                            <option value="5">Folk music</option>
-                            <option value="6">Rock</option>
-                            <option value="7">Blues</option>
-                            <option value="8">Singing</option>
-                            <option value="9">Country music</option>
-                            <option value="10">Hip hop music</option>
-                            <option value="11">Heavy metal</option>
-                            <option value="12">Orchestra</option>
-                            <option value="13">Reggae</option>
-                            <option value="14">Pop music</option>
-                            <option value="15">Baroque music</option>
-                            <option value="16">Instrumental</option>
-                            <option value="17">Soul music</option>
-                            <option value="18">Electronic dance music</option>
-                            <option value="19">Funk</option>
-                            <option value="20">Rhythm and blues</option>
-                            <option value="21">Rapping</option>
-                            <option value="22">Techno</option>
-                            <option value="23">Soundtrack</option>
-                            <option value="24">Opera</option>
-                            <option value="25">Ambient music</option>
-                            <option value="26">Alternative rock</option>
-                            <option value="27">Punk rock</option>
-                            <option value="28">Dance music</option>
-                            <option value="29">World music</option>
-                            <option value="30">Disco</option>
-                            <option value="31">Gospel music</option>
-                            <option value="32">Romantic music</option>
-                            <option value="33">Chant</option>
-                            <option value="34">Progressive rock</option>
-                            <option value="35">Trance music</option>
-                            <option value="36">Dubstep</option>
-                            <option value="37">Medieval music</option>
-                            <option value="38">Acoustic music</option>
-                            <option value="39">Easy listening</option>
-                            <option value="40">Noise</option>
-                            <option value="41">Thrash metal</option>
-                            <option value="42">Music of Latin America</option>
-                            <option value="43">House music</option>
-                            <option value="44">Pop rock</option>
-                            <option value="45">Ska</option>
-                            <option value="46">Indie rock</option>
-                            <option value="47">Video game music</option>
-                            <option value="48">Death metal</option>
-                            <option value="49">Vocal music</option>
-                            <option value="50">Drum and bass</option>
-                            <option value="51">Grunge</option>
                             </select>
                         </div>
 
