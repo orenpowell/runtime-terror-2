@@ -231,6 +231,7 @@ class LoadPage extends Component {
                             <option value="9">Separated</option>
                             <option value="10">Divorced</option>
                             <option value="11">Widowed</option>
+                            <option value="12" selected>Rather Not Say</option>
                             </select>
                         </div>
                         
@@ -265,9 +266,103 @@ class LoadPage extends Component {
                             <option value="10">Mechanical Engineering</option>
                             <option value="11">Nursing</option>
                             <option value="12">Social Work</option>
-                            <option value="13">Other</option>
+                            <option value="13" selected>Other</option>
                             </select>
                         </div> 
+
+
+                        <div className="input-group col-md-auto mb-3">
+                            <div className="input-group-prepend">
+                                <span className="input-group-text">Political Party</span>
+                            </div>
+                            <select name="Degree" className="form-control" id="degree">
+                            <option value="1">Republican</option>
+                            <option value="2">Democratic</option>
+                            <option value="3">Libertarian</option>
+                            <option value="4">Green Party</option>
+                            <option value="5">Constitution Party</option>
+                            <option value="6">Independent</option>
+                            <option value="7">Other</option>
+                            <option value="8" selected>Rather Not Say</option>
+                            </select>
+                        </div> 
+
+                        <div className="input-group col-md-auto mb-3">
+                            <div className="input-group-prepend">
+                                <span className="input-group-text">Favorite Food</span>
+                            </div>
+                            <input name ="food" type="text" className="form-control" id="food"/>
+                        </div>
+
+
+                        <div className="input-group col-md-auto mb-3">
+                            <div className="input-group-prepend">
+                                <span className="input-group-text">Ethnicity</span>
+                            </div>
+                            <select name="race" className="form-control" id="race">
+                            <option value="1">Caucasian</option>
+                            <option value="2">Black</option>
+                            <option value="3">Hispanic</option>
+                            <option value="4">Indian</option>
+                            <option value="5">Middle Eastern</option>
+                            <option value="6">Native American</option>
+                            <option value="7">Asian</option>
+                            <option value="8">Mixed Race</option>
+                            <option value="9">Other</option>
+                            <option value="10" selected>Rather Not Say</option>
+                            </select>
+                        </div> 
+
+                        <div className="input-group col-md-auto mb-3">
+                            <div className="input-group-prepend">
+                                <span className="input-group-text">Religion</span>
+                            </div>
+                            <select name="religion" className="form-control" id="religion">
+                            <option value="1">Non-religion</option>
+                            <option value="2">New Age</option>
+                            <option value="3">Muslim</option>
+                            <option value="4">Jewish</option>
+                            <option value="5">Catholic</option>
+                            <option value="6">Buddhist</option>
+                            <option value="7">Hindu</option>
+                            <option value="8">Anglican</option>
+                            <option value="8">Sikh</option>
+                            <option value="8">Methodist</option>
+                            <option value="8">Christian - other</option>
+                            <option value="8">Baptist</option>
+                            <option value="8">Lutheran</option>
+                            <option value="8">Presbyterian</option>
+                            <option value="9">Other</option>
+                            <option value="10" selected>Rather Not Say</option>
+                            </select>
+                        </div> 
+
+
+                        <div className="input-group col-md-auto mb-3">
+                            <div className="input-group-prepend">
+                                <span className="input-group-text">Do you Drink?</span>
+                            </div>
+                            <select name="drink" className="form-control" id="drink">
+                            <option value="1">No</option>
+                            <option value="2">Occasionally</option>
+                            <option value="3">Often</option>
+                            <option value="4" selected>Rather Not Say</option>
+                            </select>
+                        </div> 
+
+
+                        <div className="input-group col-md-auto mb-3">
+                            <div className="input-group-prepend">
+                                <span className="input-group-text">Do you Smoke?</span>
+                            </div>
+                            <select name="smoke" className="form-control" id="smoke">
+                            <option value="1">No</option>
+                            <option value="2">Occasionally</option>
+                            <option value="3">Often</option>
+                            <option value="4" selected>Rather Not Say</option>
+                            </select>
+                        </div> 
+
 
                         <div className="input-group col-md-auto mb-3">
                             <div className="input-group-prepend">
