@@ -45,6 +45,14 @@ class LoadPage extends Component {
                             <input name="last_name" type="text" className="form-control" id="last_name"/>
                         </div>
                         
+
+                        <div className="input-group col-md-auto mb-3">
+                            <div className="input-group-prepend">
+                                <span className="input-group-text">Hometown</span>
+                            </div>
+                            <input name ="city" type="text" className="form-control" id="city"/>
+                        </div>
+
                         
                         <div className="input-group col-md-auto mb-3">
                             <div className="input-group-prepend">
@@ -668,6 +676,129 @@ class LoadPage extends Component {
                             <option value="400">Trainspotting</option>
                             <option value="401">Traveling</option>
                             <option value="402">Whale watching</option>
+                            <option value="403">Other</option>
+                            </select>
+                        </div>
+
+
+                        <div className="input-group col-md-auto mb-3">
+                            <div className="input-group-prepend">
+                                <span className="input-group-text">Movies</span>
+                            </div>
+                            <select multiple name="movies" className="form-control" id="movies">
+                            <option value="1">Action</option>
+                            <option value="2">Adventure</option>
+                            <option value="3">Comedy</option>
+                            <option value="4">Crime</option>
+                            <option value="5">Drama</option>
+                            <option value="6">Fantasy</option>
+                            <option value="7">History</option>
+                            <option value="8">Horror</option>
+                            <option value="9">Musical</option>
+                            <option value="10">Mystery</option>
+                            <option value="11">Romance</option>
+                            <option value="12">Sci-Fi</option>
+                            <option value="13">War</option>
+                            <option value="14">Other</option>
+                            </select>
+                        </div> 
+
+
+                        <div className="input-group col-md-auto mb-3">
+                            <div className="input-group-prepend">
+                                <span className="input-group-text">Books</span>
+                            </div>
+                            <select multiple name="books" className="form-control" id="books">
+                            <option value="1">Science Fiction </option>
+                            <option value="2">Satire</option>
+                            <option value="3">Drama</option>
+                            <option value="4">Action and Adventure</option>
+                            <option value="5">Romance</option>
+                            <option value="6">Mystery</option>
+                            <option value="7">Horror</option>
+                            <option value="8">Self Help</option>
+                            <option value="9">Guide</option>
+                            <option value="10">Travel</option>
+                            <option value="11">Children's</option>
+                            <option value="12">Religious</option>
+                            <option value="13">Science</option>
+                            <option value="14">History</option>
+                            <option value="15">Math</option>
+                            <option value="16">Anthologies</option>
+                            <option value="17">Poetry</option>
+                            <option value="18">Encyclopedia</option>
+                            <option value="19">Dictionaries</option>
+                            <option value="20">Comics</option>
+                            <option value="21">Art</option>
+                            <option value="22">Cookbooks</option>
+                            <option value="23">Diaries</option>
+                            <option value="24">Prayer books</option>
+                            <option value="25">Series</option>
+                            <option value="26">Trilogies</option>
+                            <option value="27">Biographies</option>
+                            <option value="28">Autobiographies</option>
+                            <option value="29">Fantasy</option>
+                            <option value="30">Other</option>
+                            </select>
+                        </div> 
+
+
+                        <div className="input-group col-md-auto mb-3">
+                            <div className="input-group-prepend">
+                                <span className="input-group-text">Music</span>
+                            </div>
+                            <select multiple name="music" className="form-control" id="music">
+                            <option value="1">Musical theatre</option>
+                            <option value="2">Classical music</option>
+                            <option value="3">Jazz</option>
+                            <option value="4">Popular music</option>
+                            <option value="5">Folk music</option>
+                            <option value="6">Rock</option>
+                            <option value="7">Blues</option>
+                            <option value="8">Singing</option>
+                            <option value="9">Country music</option>
+                            <option value="10">Hip hop music</option>
+                            <option value="11">Heavy metal</option>
+                            <option value="12">Orchestra</option>
+                            <option value="13">Reggae</option>
+                            <option value="14">Pop music</option>
+                            <option value="15">Baroque music</option>
+                            <option value="16">Instrumental</option>
+                            <option value="17">Soul music</option>
+                            <option value="18">Electronic dance music</option>
+                            <option value="19">Funk</option>
+                            <option value="20">Rhythm and blues</option>
+                            <option value="21">Rapping</option>
+                            <option value="22">Techno</option>
+                            <option value="23">Soundtrack</option>
+                            <option value="24">Opera</option>
+                            <option value="25">Ambient music</option>
+                            <option value="26">Alternative rock</option>
+                            <option value="27">Punk rock</option>
+                            <option value="28">Dance music</option>
+                            <option value="29">World music</option>
+                            <option value="30">Disco</option>
+                            <option value="31">Gospel music</option>
+                            <option value="32">Romantic music</option>
+                            <option value="33">Chant</option>
+                            <option value="34">Progressive rock</option>
+                            <option value="35">Trance music</option>
+                            <option value="36">Dubstep</option>
+                            <option value="37">Medieval music</option>
+                            <option value="38">Acoustic music</option>
+                            <option value="39">Easy listening</option>
+                            <option value="40">Noise</option>
+                            <option value="41">Thrash metal</option>
+                            <option value="42">Music of Latin America</option>
+                            <option value="43">House music</option>
+                            <option value="44">Pop rock</option>
+                            <option value="45">Ska</option>
+                            <option value="46">Indie rock</option>
+                            <option value="47">Video game music</option>
+                            <option value="48">Death metal</option>
+                            <option value="49">Vocal music</option>
+                            <option value="50">Drum and bass</option>
+                            <option value="51">Grunge</option>
                             </select>
                         </div>
 
