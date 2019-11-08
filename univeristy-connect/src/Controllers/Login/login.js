@@ -13,10 +13,10 @@ class Login extends Component {
 
 
 
-  handleChange = ({ target }) =>
+  handleChange = ({ target }) =>{
   this.setState({
     value: { ...this.state.value, [target.name]: target.value },
-  }, () => console.log(this.state.value));
+  }, () => console.log(this.state.value));}
 
   handleSubmit = (e) => {
     e.preventDefault();
