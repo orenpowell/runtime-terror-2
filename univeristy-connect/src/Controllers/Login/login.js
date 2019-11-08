@@ -59,17 +59,20 @@ class Login extends Component {
         <div className="Login-wrapper container">  
         <div className="input-group center-block">
           <div className="zip col-lg-4">
+            Username
             <input type="text" onChange={this.handleChange} name='user_name' className="form-control" placeholder="Username..."></input>
           </div>
           </div>
           <div className="input-group center-block">
           <div className="zip col-lg-4">
+            Password
             <input type="password" onChange={this.handleChange} name='password' className="form-control" placeholder="Password...."></input>
+            <a href="/setup" className="LoginLeft">Terms of Service</a> <a href="#" className="LoginRight">Forgot Passowrd?</a>
           </div>
           </div>
           <div className="input-group center-block">
           <div className="col-lg-4">
-            <button className='btn-primary' onClick={this.handleSubmit} > 
+            <button className='btn-primary bttnConnect' onClick={this.handleSubmit} > 
               Connect
             </button>
           </div>
