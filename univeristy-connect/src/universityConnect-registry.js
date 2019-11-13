@@ -5,3 +5,4 @@ import('./Components/MyProfile/MyProfile');
 import('./Components/Housing/Housing');
 import('./Components/Market/Market');
 import('./Controllers/InitialLoadPage/InitialLoadPage')
+import('./Models/SearchTypes/HousingRoom')

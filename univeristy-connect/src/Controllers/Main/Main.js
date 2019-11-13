@@ -8,6 +8,7 @@ class Main extends Component {
     constructor(props){
         super(props);
         this.state = {
+            activeMenu: null
           
         }
       }
@@ -16,6 +17,7 @@ class Main extends Component {
 
     }
 
+    
     render() {
         const routes = window.Models;
         const current = routes.filter((route, index) => route.path === this.props.activeMainPage);
@@ -30,7 +32,7 @@ class Main extends Component {
                     path={route.path}
                     render={(props) =>
                     (
-                        <route.Component></route.Component>
+                        <route.Component ></route.Component>
                     )               
                     }
                 

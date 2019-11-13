@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import InputRange from 'react-input-range'
+import UniversityConn from "../../UniversityConnect"
 import './HousingRoom.css'
 class HouseSearch extends Component {
     constructor(props){
@@ -170,4 +171,13 @@ class HouseSearch extends Component {
     }
 }
 
-export default HouseSearch;
+
+
+export default UniversityConn.registerModel({
+    path: '/Housing/House',
+    Component: HouseSearch,
+    title: 'House',
+
+    type: 'addon',
+    icon: null
+})
