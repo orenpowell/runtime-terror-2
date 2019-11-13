@@ -1,3 +1,29 @@
 .Sidebar-Wrapper {
     height: 700px;
+    width: 300px;
+}
+.university-logo
+{
+  position: inherit;
+  bottom: 5%;
+  width: 250px;
+  padding: 25px;
+}
+@media (max-width: 991px)
+{
+    .Sidebar-Wrapper {
+        height: 700px;
+        width: 200px;
+    }
+    .university-logo
+    {
+        position: inherit;
+        width: 140px;
+        padding: 25px;
+    }
+}
+.profile-photo
+{
+  width: 100%;
+  padding: 25px;
 }
