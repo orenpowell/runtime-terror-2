@@ -17,6 +17,10 @@ class Main extends Component {
 
     }
 
+    onSearch(dataobject) {
+        console.log("Do some query with", dataobject )
+    }
+
     
     render() {
         const routes = window.Models;
@@ -32,7 +36,9 @@ class Main extends Component {
                     path={route.path}
                     render={(props) =>
                     (
-                        <route.Component ></route.Component>
+                        <route.Component 
+                            querySearch={this.onSearch} 
+                        ></route.Component>
                     )               
                     }
                 

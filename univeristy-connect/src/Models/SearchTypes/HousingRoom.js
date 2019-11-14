@@ -8,7 +8,9 @@ class HouseSearch extends Component {
         this.state ={
             value: {}
           }
+          console.log(props)
     }
+
     handleChange = ({ target }) =>{
         
         if(target.type === 'checkbox'){
@@ -178,6 +180,7 @@ export default UniversityConn.registerModel({
     Component: HouseSearch,
     title: 'House',
 
-    type: 'addon',
-    icon: null
+    type: 'option',
+    icon: null,
+    desc: 'I am looking for a house..'
 })
