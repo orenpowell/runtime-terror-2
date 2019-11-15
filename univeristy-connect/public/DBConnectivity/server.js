@@ -44,7 +44,71 @@ var con = mysql.createConnection({
    
   })
   
-  
+  app.get('/AllEvents', (req, res) => {
+    
+    con.query(`SELECT * FROM AllEvents;`, (err,resp,fields) => {
+
+			if(err) throw err;
+     
+    
+    console.log(`Connection made`, resp[0] );
+    res.send(resp[0]);
+    });
+
+  })
+
+  app.get('/AllGroups', (req, res) => {
+    
+    con.query(`SELECT * FROM AllGroups;`, (err,resp,fields) => {
+
+			if(err) throw err;
+     
+    
+    console.log(`Connection made`, resp[0] );
+    res.send(resp[0]);
+    });
+
+  })
+
+  app.get('/AllGroups', (req, res) => {
+    
+    con.query(`SELECT * FROM AllGroups;`, (err,resp,fields) => {
+
+			if(err) throw err;
+     
+    
+    console.log(`Connection made`, resp[0] );
+    res.send(resp[0]);
+    });
+
+  })
+
+  app.get('/housing/homes', (req, res) => {
+    
+    con.query(`SELECT * FROM Housing;`, (err,resp,fields) => {
+
+			if(err) throw err;
+     
+    
+    console.log(`Connection made`, resp[0] );
+    res.send(resp[0]);
+    });
+
+  })
+
+
+  app.get('/housing/roommates', (req, res) => {
+    
+    con.query(`SELECT * FROM Housing;`, (err,resp,fields) => {
+
+			if(err) throw err;
+     
+    
+    console.log(`Connection made`, resp[0] );
+    res.send(resp[0]);
+    });
+
+  })
 
   // app.post('/',(req,res)=>{
 

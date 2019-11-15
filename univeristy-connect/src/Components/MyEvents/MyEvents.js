@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import UniversityConn from '../../UniversityConnect';
 import SearchBar from '../../Models/SearchBar/SearchBar'
 import Feed from '../../Models/Feed/Feed'
+import req from '../../Utils/request'
+
 class MyEvents extends Component{
     constructor(props){
         super(props);
@@ -13,7 +15,17 @@ class MyEvents extends Component{
     }
 
     componentWillMount(){
+        const requestURL = 'http://localhost:3001/AllEvents';
+        // const body ={ 
+        //     userName: 'tony',
+        //     password: 'tony1'
+        // }
 
+        req.query(requestURL );
+    }
+
+    componentDidMount() {
+ 
     }
 
     render(){

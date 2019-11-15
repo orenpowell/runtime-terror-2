@@ -23,7 +23,7 @@ class Login extends Component {
     const body = this.state.value;
     const requestURL = 'http://localhost:3001/userValidation';
 
-    req(requestURL, body, (error, response, body) => {
+    req.auth(requestURL, body, (error, response, body) => {
     
     if (error) {
         return console.error('Request failed:', body);

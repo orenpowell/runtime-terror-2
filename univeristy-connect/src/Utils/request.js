@@ -1,6 +1,7 @@
 import { stringify } from "querystring";
 
 var request = require('request');
+
 const formatQueryParams = (params) => {
     return Object.keys(params)
       .map(k => `${encodeURIComponent(k)}=${encodeURIComponent(params[k])}`)
@@ -23,8 +24,18 @@ const formatQueryParams = (params) => {
       throw error;
     });
     }
-    
- const req = (url, options = {}, callback) => {
+
+
+ const query = (url) => {
+    request.get(url, (err,res, byd) => {
+      console.log(byd);
+    })
+  }
+ const post = (url, body = {}) => {
+
+ }
+
+ const auth = (url, options = {}, callback) => {
     console.log(url, options);
   
     const setup ={
@@ -36,6 +47,11 @@ const formatQueryParams = (params) => {
     };
      request.get(setup, callback);
     
+}
+
+const req = {
+  auth,
+  query
 }
 
 export default req;
