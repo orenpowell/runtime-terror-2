@@ -16,12 +16,17 @@ class MyEvents extends Component{
 
     componentWillMount(){
         const requestURL = 'http://localhost:3001/AllEvents';
-        // const body ={ 
-        //     userName: 'tony',
-        //     password: 'tony1'
-        // }
 
-        req.query(requestURL );
+        req.query(requestURL, (error, response, body) => {
+    
+            if (error) {
+                return console.error('Request failed:', body);
+            }
+              const result = JSON.parse(body);
+              this.setState({allEvents : result})
+              console.log(result);
+            
+            } );
     }
 
     componentDidMount() {
@@ -29,11 +34,12 @@ class MyEvents extends Component{
     }
 
     render(){
+        const { allEvents }  = this.state;
         return(
             <div className="MyEvents-Wrapper">
                 <p>Welcome to my Events</p>
             <SearchBar></SearchBar>
-            <Feed></Feed>
+            <Feed dataset = {allEvents}></Feed>
 
             </div>
         )

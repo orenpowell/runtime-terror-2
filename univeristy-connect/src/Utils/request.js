@@ -26,11 +26,10 @@ const formatQueryParams = (params) => {
     }
 
 
- const query = (url) => {
-    request.get(url, (err,res, byd) => {
-      console.log(byd);
-    })
+ const query = (url, callback) => {
+    request.get(url, callback)
   }
+  
  const post = (url, body = {}) => {
 
  }

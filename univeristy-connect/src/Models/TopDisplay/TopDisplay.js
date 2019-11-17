@@ -8,7 +8,7 @@ const TopDisplay = (props) =>
                 <div className="topdisplay">
                     <div className="title-wrapper row">
                          <label className='col-10'>{props.title}</label>
-                        <label className='col-2'><small>View More</small></label>
+                        <input className='col-2' type='button' value = "View More"></input>
                     </div>
                     {/* <div className={`Item-roll row border`}>
                         <div className="item col-sm border">

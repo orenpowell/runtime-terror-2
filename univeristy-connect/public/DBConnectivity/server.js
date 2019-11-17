@@ -51,8 +51,8 @@ var con = mysql.createConnection({
 			if(err) throw err;
      
     
-    console.log(`Connection made`, resp[0] );
-    res.send(resp[0]);
+    //console.log(`Connection made`, resp );
+    res.send(resp);
     });
 
   })
@@ -77,7 +77,7 @@ var con = mysql.createConnection({
 			if(err) throw err;
      
     
-    console.log(`Connection made`, resp[0] );
+    console.log(`Connection made`, resp );
     res.send(resp[0]);
     });
 
@@ -90,7 +90,7 @@ var con = mysql.createConnection({
 			if(err) throw err;
      
     
-    console.log(`Connection made`, resp[0] );
+    console.log(`Connection made`, resp );
     res.send(resp[0]);
     });
 

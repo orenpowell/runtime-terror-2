@@ -8,7 +8,6 @@ class HouseSearch extends Component {
         this.state ={
             value: {}
           }
-          console.log(props)
     }
 
     handleChange = ({ target }) =>{
@@ -53,111 +52,111 @@ class HouseSearch extends Component {
     return(
         <div className="SearchForm container"> 
             <div className="row">
-                <div class="input-group mb-3 col">
-                    <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1">Min $</span>
+                <div className="input-group mb-3 col">
+                    <div className="input-group-prepend">
+                    <span className="input-group-text" id="basic-addon1">Min $</span>
                     </div>
-                    <input type="text" class="form-control" onChange={this.handleChange}  name="min_price" placeholder="0" aria-label="Username" aria-describedby="basic-addon1"/>
+                    <input type="text" className="form-control" onChange={this.handleChange}  name="min_price" placeholder="0" aria-label="Username" aria-describedby="basic-addon1"/>
                 </div>
 
-                <div class="input-group mb-3 col">
-                    <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1">Max $</span>
+                <div className="input-group mb-3 col">
+                    <div className="input-group-prepend">
+                    <span className="input-group-text" id="basic-addon1">Max $</span>
                     </div>
-                    <input type="text" class="form-control" onChange={this.handleChange}  name="max_price" placeholder="0" aria-label="Username" aria-describedby="basic-addon1"/>
+                    <input type="text" className="form-control" onChange={this.handleChange}  name="max_price" placeholder="0" aria-label="Username" aria-describedby="basic-addon1"/>
                 </div>
 
             </div>
             <div className="row">
                 <div className='col'>
-                    <div class="input-group ">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
+                    <div className="input-group ">
+                        <div className="input-group-prepend">
+                            <div className="input-group-text">
                                 <input type="checkbox" onChange={this.handleChange} name="pet_friendly" />
                             </div>
                         </div>
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="">Pet Friendly</span>
+                        <div className="input-group-prepend">
+                            <span className="input-group-text" id="">Pet Friendly</span>
                         </div>
                     </div>
 
-                    <div class="input-group ">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
+                    <div className="input-group ">
+                        <div className="input-group-prepend">
+                            <div className="input-group-text">
                                 <input type="checkbox" onChange={this.handleChange} name="smoking" />
                             </div>
                         </div>
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="">Smoking</span>
+                        <div className="input-group-prepend">
+                            <span className="input-group-text" id="">Smoking</span>
                         </div>
                     </div>
 
-                    <div class="input-group ">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
+                    <div className="input-group ">
+                        <div className="input-group-prepend">
+                            <div className="input-group-text">
                                 <input type="checkbox" onChange={this.handleChange} name="furnished" />
                             </div>
                         </div>
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="">Furnished</span>
+                        <div className="input-group-prepend">
+                            <span className="input-group-text" id="">Furnished</span>
                         </div>
                     </div>
                 </div>
 
                 <div className='col'>
                 <label> Type of Housing</label>
-                    <div class="input-group ">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
+                    <div className="input-group ">
+                        <div className="input-group-prepend">
+                            <div className="input-group-text">
                                 <input type="checkbox" onChange={this.handleChange} name="apartment_onCampus" />
                             </div>
                         </div>
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="">On-Campus Aparment</span>
+                        <div className="input-group-prepend">
+                            <span className="input-group-text" id="">On-Campus Aparment</span>
                         </div>
                     </div>
 
-                    <div class="input-group ">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
+                    <div className="input-group ">
+                        <div className="input-group-prepend">
+                            <div className="input-group-text">
                                 <input type="checkbox" onChange={this.handleChange} name="apartment_offCamps" />
                             </div>
                         </div>
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="">Off-Campus Apartment</span>
+                        <div className="input-group-prepend">
+                            <span className="input-group-text" id="">Off-Campus Apartment</span>
                         </div>
                     </div>
 
-                    <div class="input-group ">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
+                    <div className="input-group ">
+                        <div className="input-group-prepend">
+                            <div className="input-group-text">
                                 <input type="checkbox" onChange={this.handleChange} name="house" />
                             </div>
                         </div>
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="">House</span>
+                        <div className="input-group-prepend">
+                            <span className="input-group-text" id="">House</span>
                         </div>
                     </div>
                     
-                    <div class="input-group ">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
+                    <div className="input-group ">
+                        <div className="input-group-prepend">
+                            <div className="input-group-text">
                                 <input type="checkbox" onChange={this.handleChange} name="townhouse" />
                             </div>
                         </div>
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="">TownHouse</span>
+                        <div className="input-group-prepend">
+                            <span className="input-group-text" id="">TownHouse</span>
                         </div>
                     </div>
                     
-                    <div class="input-group ">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
+                    <div className="input-group ">
+                        <div className="input-group-prepend">
+                            <div className="input-group-text">
                                 <input type="checkbox" onChange={this.handleChange} name="condo" />
                             </div>
                         </div>
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="">Condo</span>
+                        <div className="input-group-prepend">
+                            <span className="input-group-text" id="">Condo</span>
                         </div>
                     </div>
 
@@ -166,7 +165,7 @@ class HouseSearch extends Component {
                 
             </div>
 
-            <button type="button" onClick={() => this.Search()} class="btn btn-primary">Search</button>
+            <button type="button" onClick={() => this.Search()} className="btn btn-primary">Search</button>
         </div>
 
     )
