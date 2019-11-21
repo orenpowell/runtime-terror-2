@@ -8,7 +8,9 @@ class Main extends Component {
     constructor(props){
         super(props);
         this.state = {
-            activeMenu: null
+            activeMenu: null,
+            searchBarType: null,
+            DataSet: null
           
         }
       }
@@ -21,11 +23,20 @@ class Main extends Component {
         console.log("Do some query with", dataobject )
     }
 
+    setActiveMenu({target}) {
+        // this.setState({
+        //     activeMenu: e
+        // })
+        this.setState({
+            activeMenu: target.name
+        });
+        console.log(target.name);
+    }
     
     render() {
         const routes = window.Models;
         const current = routes.filter((route, index) => route.path === this.props.activeMainPage);
-       
+        const {activeMenu} = this.state;
         const routeList = routes.map((route, index) => {
            
             return(
@@ -37,7 +48,9 @@ class Main extends Component {
                     render={(props) =>
                     (
                         <route.Component 
-                            querySearch={this.onSearch} 
+                            querySearch={this.onSearch}
+                            setActiveMenu={(e) => this.setActiveMenu(e)}
+                            activeMenu={activeMenu}
                         ></route.Component>
                     )               
                     }

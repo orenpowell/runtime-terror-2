@@ -8,12 +8,20 @@ class Housing extends Component{
     constructor(props){
         super(props);
         this.state = {
+            activeMenuType: null        
         }
     }
 
     componentWillMount(){
 
     }
+
+    // setActiveMenuType (e){
+        
+    //     const { setActiveMenu } = this.props;
+    //     this.setState({activeMenuType: e});
+    //     setActiveMenu(e);
+    // }
 
     // handleClick({ target }){
     //     this.setState({houseType: target.name});
@@ -25,9 +33,10 @@ class Housing extends Component{
     // }
 
     render(){
-        //const { houseType } = this.state;
+        const { setActiveMenu } = this.props;
         //console.log(houseType);
         const options = UniversityConn.getOptionsModels();
+       
         // const C = houseType==null ? null :
         //  (UniversityConn.getAddons().filter((value) => {
         //     return houseType.toString().toUpperCase() === value.title.toUpperCase();
@@ -48,7 +57,8 @@ class Housing extends Component{
                     <ul  key={option.title + i} >
                     <Link
                         name={option.title}
-                        to={option.path}
+                        to='/Housing/Display'
+                        onClick={(e) => setActiveMenu(e) }
                     >
                         {option.desc}
                     </Link>

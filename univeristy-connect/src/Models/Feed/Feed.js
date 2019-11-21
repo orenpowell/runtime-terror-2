@@ -2,7 +2,7 @@ import React from 'react'
 import './Feed.css'
 const Feed = (props) => {
     const {dataset } = props;
-
+    console.log(dataset);
     return (
         <div className="Feed-Wrapper">
             <div className="card-columns">

@@ -43,9 +43,10 @@ class HouseSearch extends Component {
     }
 
     Search() {
+        const { querySearch } = this.props;
         const { value } = this.state;
         console.log(value);
-        this.props.querySearch(value);
+        querySearch(value);
     }
 
     render(){

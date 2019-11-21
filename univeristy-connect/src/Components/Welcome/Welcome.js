@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import UniversityConn from '../../UniversityConnect';
 import TopDisplay from '../../Models/TopDisplay/TopDisplay'
+
 class WelcomePage extends Component {
     constructor(props){
         super(props);
         this.state = {
             catalog: {
-                titles: ['Suggested Connections', 'Events', 'Groups', 'MarketPlace'],
+                titles: ['Connections', 'Events', 'Groups', 'MarketPlace'],
                 data: null
             }
 

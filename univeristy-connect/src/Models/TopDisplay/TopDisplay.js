@@ -1,4 +1,6 @@
 import React from 'react'
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
 
 const TopDisplay = (props) =>
 {
@@ -8,7 +10,10 @@ const TopDisplay = (props) =>
                 <div className="topdisplay">
                     <div className="title-wrapper row">
                          <label className='col-10'>{props.title}</label>
-                        <input className='col-2' type='button' value = "View More"></input>
+                        <Link className='col-2' 
+                        
+                        
+                        >More</Link>
                     </div>
                     {/* <div className={`Item-roll row border`}>
                         <div className="item col-sm border">

@@ -7,4 +7,5 @@ import('./Components/Market/Market');
 import('./Controllers/InitialLoadPage/InitialLoadPage');
 import('./Models/SearchTypes/HousingRoom');
 import('./Models/SearchTypes/HousingRoomate')
+import('./Models/HOC/Display')
 
