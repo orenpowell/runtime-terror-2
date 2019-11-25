@@ -67,7 +67,7 @@ class Login extends Component {
           <div className="zip col-lg-4">
             Password
             <input type="password" onChange={this.handleChange} name='password' className="form-control" placeholder="Password...."></input>
-            <a href="/setup" className="LoginLeft">Terms of Service</a> <a href="#" className="LoginRight">Forgot Passowrd?</a>
+            <a href="/setup" className="LoginLeft">Terms of Service</a> <a href="#" className="LoginRight">Forgot Password?</a>
           </div>
           </div>
           <div className="input-group center-block">

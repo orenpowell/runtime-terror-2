@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './SearchBar.css'
+import UniversityConn from '../../UniversityConnect'
 class SearchBar extends Component {
   constructor(props){
     super(props);
@@ -36,4 +37,12 @@ class SearchBar extends Component {
   }
 }
 
-export default SearchBar;
+export default UniversityConn.registerModel({
+  path: '/Search',
+  Component: SearchBar,
+  title: 'SearchBar',
+
+  type: 'option',
+  icon: null,
+  desc: null
+})

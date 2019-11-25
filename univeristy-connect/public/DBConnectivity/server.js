@@ -46,33 +46,7 @@ var con = mysql.createConnection({
   
   app.get('/AllEvents', (req, res) => {
     
-    con.query(`SELECT * FROM AllEvents;`, (err,resp,fields) => {
-
-			if(err) throw err;
-     
-    
-    //console.log(`Connection made`, resp );
-    res.send(resp);
-    });
-
-  })
-
-  app.get('/AllGroups', (req, res) => {
-    
-    con.query(`SELECT * FROM AllGroups;`, (err,resp,fields) => {
-
-			if(err) throw err;
-     
-    
-    console.log(`Connection made`, resp[0] );
-    res.send(resp[0]);
-    });
-
-  })
-
-  app.get('/AllGroups', (req, res) => {
-    
-    con.query(`SELECT * FROM AllGroups;`, (err,resp,fields) => {
+    con.query(`CALL GetEvents();`, (err,resp,fields) => {
 
 			if(err) throw err;
      
@@ -83,7 +57,46 @@ var con = mysql.createConnection({
 
   })
 
-  app.get('/housing/homes', (req, res) => {
+  app.get('/AllMarketPlace', (req, res) => {
+    
+    con.query(`CALL GetMP();`, (err,resp,fields) => {
+
+			if(err) throw err;
+     
+    
+    console.log(`Connection made`, resp[0] );
+    res.send(resp[0]);
+    });
+
+  });
+
+  app.get('/AllConnections', (req, res) => {
+    
+    con.query(`SELECT * FROM Connections;`, (err,resp,fields) => {
+
+			if(err) throw err;
+     
+    
+    console.log(`Connection made`, resp[0] );
+    res.send(resp[0]);
+    });
+
+  });
+
+  app.get('/Housing/House', (req, res) => {
+    
+    con.query(`CALL GetHouses()`, (err,resp,fields) => {
+
+			if(err) throw err;
+     
+    
+    console.log(`Connection made`, resp );
+    res.send(resp[0]);
+    });
+
+  })
+
+  app.get('/Housing/Roommate', (req, res) => {
     
     con.query(`SELECT * FROM Housing;`, (err,resp,fields) => {
 
@@ -97,18 +110,20 @@ var con = mysql.createConnection({
   })
 
 
-  app.get('/housing/roommates', (req, res) => {
+  app.get('/AllGroups', (req, res) => {
     
-    con.query(`SELECT * FROM Housing;`, (err,resp,fields) => {
+    con.query(`Call GetGroups();`, (err,resp,fields) => {
 
 			if(err) throw err;
      
     
-    console.log(`Connection made`, resp[0] );
+    console.log(`Connection made`, resp );
     res.send(resp[0]);
     });
 
   })
+
+
 
   // app.post('/',(req,res)=>{
 

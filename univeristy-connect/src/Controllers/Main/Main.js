@@ -28,15 +28,24 @@ class Main extends Component {
         //     activeMenu: e
         // })
         this.setState({
-            activeMenu: target.name
+            activeMenu: target.title,
+            searchBarType: target.name
         });
+        console.log(target.name, target.title);
+    }
+
+    setActiveSearchBarType({target}){
         console.log(target.name);
+        this.setState({
+            activeMenu: target.name,
+            searchBarType: '/Search'
+        });
     }
     
     render() {
         const routes = window.Models;
         const current = routes.filter((route, index) => route.path === this.props.activeMainPage);
-        const {activeMenu} = this.state;
+        const {activeMenu, searchBarType} = this.state;
         const routeList = routes.map((route, index) => {
            
             return(
@@ -51,6 +60,8 @@ class Main extends Component {
                             querySearch={this.onSearch}
                             setActiveMenu={(e) => this.setActiveMenu(e)}
                             activeMenu={activeMenu}
+                            searchBarType={searchBarType}
+                            setActiveSearchBarType={(e => this.setActiveSearchBarType(e))}
                         ></route.Component>
                     )               
                     }

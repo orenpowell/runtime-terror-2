@@ -56,9 +56,10 @@ class Housing extends Component{
                     return (
                     <ul  key={option.title + i} >
                     <Link
-                        name={option.title}
-                        to='/Housing/Display'
+                        name={`/Housing/${option.title}`}
+                        to='/Display'
                         onClick={(e) => setActiveMenu(e) }
+                        title={option.title}
                     >
                         {option.desc}
                     </Link>

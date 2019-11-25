@@ -7,13 +7,15 @@ const Feed = (props) => {
         <div className="Feed-Wrapper">
             <div className="card-columns">
                 {dataset ?
-                dataset.map((event, index) => {
+                dataset.map((item, index) => {
                     return(
-                    <div className="card"  key={event.eventTitle + index}>
+                    <div className="card"  key={item.Title +item.Id}>
                     <img src="..." className="card-img-top" alt="..."/>
                     <div className="card-body">
-                        <h5 className="card-title">{event.eventTitle}</h5>
-                        <p className="card-text">{event.eventDescription}</p>
+                        <h5 className="card-title">{item.Title}</h5>
+                        {item.metaInfo ? <p className="card-text metaInfo">{item.metaInfo} </p>: null}
+                        <p className="card-text">{item.Description}</p>
+                        <p className="card-text"><small className="text-muted">Posted: {item.Date}</small></p>
                     </div>
                     </div>
                     )

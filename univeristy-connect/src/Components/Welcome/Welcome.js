@@ -19,7 +19,8 @@ class WelcomePage extends Component {
     }
 
     render(){
-        const { catalog } = this.state;
+        const { catalog  } = this.state;
+        const {  setActiveSearchBarType  } = this.props;
         return(
             <div className="Welcome-Wrapper">
                 <p>Welcome</p>
@@ -28,6 +29,7 @@ class WelcomePage extends Component {
                     <TopDisplay 
                         key={title}
                         title={title}
+                        setActiveSearchBarType={setActiveSearchBarType}
                     ></TopDisplay>
                     )
                 })}

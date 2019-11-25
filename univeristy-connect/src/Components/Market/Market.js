@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import UniversityConn from '../../UniversityConnect';
 import SearchBar from '../../Models/SearchBar/SearchBar'
-import Feed from '../../Models/Feed/Feed'
+import Feed from '../../Models/Feed/Feed';
+import req from '../../Utils/request';
 
 class Market extends Component{
     constructor(props){
         super(props);
         this.state = {
-            catalog: [],
-            search: ''
+            allItems: [],
+            searchItem: null,
+            SearchBar:null
         }
     }
 
@@ -16,13 +18,39 @@ class Market extends Component{
 
     }
 
-    render(){
-        return(
-            <div className="Housing-Wrapper">
-                <p>Welcome market</p>
-                <SearchBar></SearchBar>
-                <Feed></Feed>
+    componentWillMount(){
+        const requestURL = 'http://localhost:3001/AllMarketPlace';
 
+         const options = UniversityConn.getOptionsModels().filter((value, index) => {
+            
+            return value.path === '/Search'
+
+        });
+        console.log(options);
+        
+        req.query(requestURL, (error, response, body) => {
+            
+            if (error) {
+                return console.error('Request failed:', body);
+            }
+              const result = JSON.parse(body);
+              this.setState({allItems : result, SearchBar: options[0].Component})
+            //   console.log(result);
+            
+            } );
+    }
+
+    render(){
+        const { allItems , SearchBar } = this.state;
+        return(
+            <div >
+            {SearchBar  ?
+            <div className="Housing-Wrapper">
+            <SearchBar></SearchBar>
+            <Feed dataset = {allItems}></Feed> 
+            </div>: null
+            }
+        
             </div>
         )
     }

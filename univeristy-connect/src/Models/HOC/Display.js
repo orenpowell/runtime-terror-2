@@ -17,11 +17,11 @@ class Display extends Component  {
            
         }  
         
-     fetchData() {
-         const { apiPath } = this.state;
-        const requestURL = `http://localhost:3001/AllEvents`;
+     fetchData(path) {
+        console.log(path);
+        //const requestURL = `http://localhost:3001/AllEvents`;
         // Swtich with
-        // const requestURL = `http://localhost:3001/${apiPath}`;
+        const requestURL = `http://localhost:3001${path}`;
 
 
         
@@ -36,18 +36,25 @@ class Display extends Component  {
 
      } 
 
+
+
      componentDidMount() {
-        const {activeMenu} = this.props;
+        const {activeMenu, searchBarType} = this.props;
+        
         if(activeMenu){
         const options = UniversityConn.getOptionsModels().filter((value, index) => {
-        
-            return value.title === activeMenu.toString();
+            
+            return value.path === searchBarType.toString();
 
         });
-        this.fetchData();
-        this.setState({SearchBar: options[0].Component, apiPath: options[0].path});
+
+        const path = searchBarType === "/Search" ? `/All${activeMenu}` : options[0].path;
+        this.fetchData(path);
+        this.setState({SearchBar: options[0].Component, apiPath: path});
      
-        } 
+        }else{
+
+        }
 
         setTimeout(() => {
             this.setState({loadingDone: true}); 
@@ -92,7 +99,7 @@ class Display extends Component  {
 }
 
 export default UniversityConn.registerModel({
-    path: '/Housing/Display',
+    path: '/Display',
     Component: Display,
     title: '',
 

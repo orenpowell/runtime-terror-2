@@ -1,3 +1,8 @@
 .Feed-Wrapper {
     margin-top: 20px;;
 }
+
+.Feed-Wrapper .card-columns .card .card-text.metaInfo{
+    float: right;
+
+}

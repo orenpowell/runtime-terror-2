@@ -58,7 +58,7 @@ class LoadPage extends Component {
                             <div className="input-group-prepend">
                                 <span className="input-group-text">Year</span>
                             </div>
-                            <select name="GradClass" className="form-control" id="school_year">
+                            <select name="grad_year" className="form-control" id="school_year">
                             <option value="1">Freshman</option>
                             <option value="2">Sophmore</option>
                             <option value="3">Junior</option>
@@ -224,14 +224,7 @@ class LoadPage extends Component {
                             <option value="2">Relationship</option>
                             <option value="3">Engaged</option>
                             <option value="4">Married</option>
-                            <option value="5">Civil Union</option>
-                            <option value="6">Domestic Partnership</option>
-                            <option value="7">Open Relationship</option>
-                            <option value="8">Complicated</option>
-                            <option value="9">Separated</option>
-                            <option value="10">Divorced</option>
-                            <option value="11">Widowed</option>
-                            <option value="12" selected>Rather Not Say</option>
+                            <option value="5" selected>Other</option>
                             </select>
                         </div>
                         
@@ -240,10 +233,10 @@ class LoadPage extends Component {
                             <div className="input-group-prepend">
                                 <span className="input-group-text">Gender</span>
                             </div>
-                            <select name="Gender" className="form-control" id="gender">
+                            <select name="gender" className="form-control" id="gender">
                             <option value="1">Male</option>
                             <option value="2">Female</option>
-                            <option value="3">Neutral</option>
+                            <option value="3">Other</option>
                             </select>
                         </div> 
 
@@ -253,19 +246,18 @@ class LoadPage extends Component {
                                 <span className="input-group-text">Degree</span>
                             </div>
                             <select name="Degree" className="form-control" id="degree">
-                            <option value="1">Arts</option>
-                            <option value="2">Fine Arts</option>
-                            <option value="3">General Studies</option>
-                            <option value="4">Music</option>
-                            <option value="5">Music Education</option>
-                            <option value="6">Science</option>
-                            <option value="7">Business Administration</option>
-                            <option value="8">Computer Engineering</option>
-                            <option value="9">Electical Engineering</option>
-                            <option value="10">Mechanical Engineering</option>
-                            <option value="11">Nursing</option>
-                            <option value="12">Social Work</option>
-                            <option value="13" selected>Other</option>
+                            <option value="1">Fine Arts</option>
+                            <option value="2">General Studies</option>
+                            <option value="3">Music</option>
+                            <option value="4">Education</option>
+                            <option value="5">Science</option>
+                            <option value="6">Business</option>
+                            <option value="7">Engineering</option>
+                            <option value="8">Math</option>
+                            <option value="9">Technology</option>
+                            <option value="10">Nursing</option>
+                            <option value="11">Social Work</option>
+                            <option value="12" selected>Other</option>
                             </select>
                         </div> 
 
@@ -274,15 +266,13 @@ class LoadPage extends Component {
                             <div className="input-group-prepend">
                                 <span className="input-group-text">Political Party</span>
                             </div>
-                            <select name="Degree" className="form-control" id="degree">
+                            <select name="Party" className="form-control" id="degree">
                             <option value="1">Republican</option>
                             <option value="2">Democratic</option>
                             <option value="3">Libertarian</option>
-                            <option value="4">Green Party</option>
-                            <option value="5">Constitution Party</option>
-                            <option value="6">Independent</option>
-                            <option value="7">Other</option>
-                            <option value="8" selected>Rather Not Say</option>
+                            <option value="4">Independent</option>
+                            <option value="5">Other</option>
+                            <option value="6" selected>Rather Not Say</option>
                             </select>
                         </div> 
 
@@ -291,7 +281,7 @@ class LoadPage extends Component {
                             <div className="input-group-prepend">
                                 <span className="input-group-text">Ethnicity</span>
                             </div>
-                            <select name="race" className="form-control" id="race">
+                            <select name="Race" className="form-control" id="race">
                             <option value="1">Caucasian</option>
                             <option value="2">Black</option>
                             <option value="3">Hispanic</option>
@@ -318,14 +308,10 @@ class LoadPage extends Component {
                             <option value="6">Buddhist</option>
                             <option value="7">Hindu</option>
                             <option value="8">Anglican</option>
-                            <option value="8">Sikh</option>
-                            <option value="8">Methodist</option>
-                            <option value="8">Christian - other</option>
-                            <option value="8">Baptist</option>
-                            <option value="8">Lutheran</option>
-                            <option value="8">Presbyterian</option>
-                            <option value="9">Other</option>
-                            <option value="10" selected>Rather Not Say</option>
+                            <option value="9">Sikh</option>
+                            <option value="10">Christian - other</option>
+                            <option value="11">Other</option>
+                            <option value="12" selected>Rather Not Say</option>
                             </select>
                         </div> 
 
