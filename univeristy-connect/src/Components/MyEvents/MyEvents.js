@@ -3,6 +3,7 @@ import UniversityConn from '../../UniversityConnect';
 //import SearchBar from '../../Models/SearchBar/SearchBar'
 import Feed from '../../Models/Feed/Feed'
 import req from '../../Utils/request'
+import auth from '../../Utils/auth'
 
 class MyEvents extends Component{
     constructor(props){
@@ -16,7 +17,8 @@ class MyEvents extends Component{
     }
 
     componentWillMount(){
-        const requestURL = 'http://localhost:3001/AllEvents';
+        const user = auth.getToken('loginUser');
+        const requestURL = `http://localhost:3001/AllEvents/${user}`;
 
          const options = UniversityConn.getOptionsModels().filter((value, index) => {
             
@@ -29,6 +31,7 @@ class MyEvents extends Component{
             if (error) {
                 return console.error('Request failed:', body);
             }
+            console.log(body);
               const result = JSON.parse(body);
               this.setState({allEvents : result, SearchBar: options[0].Component})
             //   console.log(result);

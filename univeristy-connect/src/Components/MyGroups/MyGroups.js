@@ -3,6 +3,8 @@ import UniversityConn from '../../UniversityConnect';
 //import SearchBar from '../../Models/SearchBar/SearchBar';
 import Feed from '../../Models/Feed/Feed'
 import req from '../../Utils/request'
+import auth from '../../Utils/auth'
+
 class MyGroups extends Component {
     constructor(props){
         super(props);
@@ -15,7 +17,8 @@ class MyGroups extends Component {
     }
 
     componentWillMount(){
-        const requestURL = 'http://localhost:3001/AllGroups';
+        const user = auth.getToken('loginUser');
+        const requestURL = `http://localhost:3001/AllGroups/${user}`;
 
          const options = UniversityConn.getOptionsModels().filter((value, index) => {
             

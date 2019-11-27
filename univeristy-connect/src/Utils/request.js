@@ -30,10 +30,16 @@ const formatQueryParams = (params) => {
     request.get(url, callback)
   }
   
- const post = (url, body = {}) => {
+ const post = (url, body) => {
+   request.post({url, form: body}, (error, response) => {
+    
+    if (error) {
+        return console.error('Request failed:', body);
+    } 
+    console.log(response);
 
+ });
  }
-
  const auth = (url, options = {}, callback) => {
     console.log(url, options);
   
@@ -50,7 +56,8 @@ const formatQueryParams = (params) => {
 
 const req = {
   auth,
-  query
+  query, 
+  post
 }
 
 export default req;

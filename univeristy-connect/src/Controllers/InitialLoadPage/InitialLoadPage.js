@@ -1,22 +1,61 @@
 import React, { Component } from 'react'
 import UniversityConn from '../../UniversityConnect';
+import req from '../../Utils/request' 
+import auth from '../../Utils/auth'
 class LoadPage extends Component {
     constructor(props){
         super(props);
         this.state = {
-
+            value :{}
         }
     }
 
     componentDidMount() {
 
+
     }
 
     handleSubmit(event) {
-        event.preventDefault()
-        const data = new FormData(event.target);
+        event.preventDefault();
+        const {value } = this.state;
+        const user = auth.getToken('loginUser') ;
+        const requestURL = `http://localhost:3001/setup/student/${user}`;
+        req.post(requestURL, value);
         this.props.history.push('/');
     }
+
+
+    handleChange = ({ target }) =>{
+        
+        if(target.type === 'checkbox'){
+            console.log('here')
+            const name = target.name;
+            const { value } = this.state;
+            const len = Object.keys(value);
+            if(len.length > 0){
+            const temp = len.filter((e) => e === name.toString());
+            if(temp.length > 0){
+                this.setState({
+                    value: { ...this.state.value, [target.name]: !value[name]},
+                  }, () => console.log(this.state.value));
+                
+               
+            } else {
+                 this.setState({
+                    value: { ...this.state.value, [target.name]: true },
+                  }, () => console.log(this.state.value));
+            }
+            } else{
+                this.setState({
+                    value: { ...this.state.value, [target.name]: true },
+                  }, () => console.log(this.state.value));
+            }
+        } else {
+            this.setState({
+            value: { ...this.state.value, [target.name]: target.value },
+            }, () => console.log(this.state.value));
+        }
+    } 
 
     render() {
         return (
@@ -34,7 +73,7 @@ class LoadPage extends Component {
                             <div className="input-group-prepend">
                                 <span className="input-group-text">First Name</span>
                             </div>
-                            <input name ="first_name" type="text" className="form-control" id="first_name"/>
+                            <input name ="first_name" type="text" onChange={this.handleChange}  className="form-control" id="first_name"/>
                         </div>
 
                         
@@ -42,7 +81,7 @@ class LoadPage extends Component {
                             <div className="input-group-prepend">
                                 <span className="input-group-text">Last Name</span>
                             </div>
-                            <input name="last_name" type="text" className="form-control" id="last_name"/>
+                            <input name="last_name" type="text" onChange={this.handleChange}  className="form-control" id="last_name"/>
                         </div>
                         
 
@@ -50,7 +89,7 @@ class LoadPage extends Component {
                             <div className="input-group-prepend">
                                 <span className="input-group-text">Hometown</span>
                             </div>
-                            <input name ="city" type="text" className="form-control" id="city"/>
+                            <input name ="city" type="text" onChange={this.handleChange}  className="form-control" id="city"/>
                         </div>
 
                         
@@ -58,7 +97,7 @@ class LoadPage extends Component {
                             <div className="input-group-prepend">
                                 <span className="input-group-text">Year</span>
                             </div>
-                            <select name="grad_year" className="form-control" id="school_year">
+                            <select name="grad_year" onChange={this.handleChange} className="form-control" id="school_year">
                             <option value="1">Freshman</option>
                             <option value="2">Sophmore</option>
                             <option value="3">Junior</option>
@@ -66,13 +105,24 @@ class LoadPage extends Component {
                             <option value="5">Graduate Student</option>
                             </select>
                         </div>
-                       
+                        
+                        <div className="input-group col-md-auto mb-3">
+                            <div className="input-group-prepend">
+                                <span className="input-group-text">Looking for a house?</span>
+                            </div>
+                            <select name="roommate_Search" onChange={this.handleChange}  className="form-control" id="roommate_Search">
+                            <option value="1">yes</option>
+                            <option value="2">no</option>
+                            </select>
+                            <input hidden name ="roommateDesc" type="text" className="form-control" id="roommateDesc"/>
+
+                        </div>
                        
                         <div className="input-group col-md-auto mb-3">
                             <div className="input-group-prepend">
                                 <span className="input-group-text">DOB</span>
                             </div>
-                            <select name="Month" className="form-control" id="month">
+                            <select name="Month" onChange={this.handleChange} className="form-control" id="month">
                             <option value="1">January</option>
                             <option value="2">February</option>
                             <option value="3">March</option>
@@ -86,7 +136,7 @@ class LoadPage extends Component {
                             <option value="11">November</option>
                             <option value="12">December</option>
                             </select>
-                            <select name="Day" className="form-control" id="month">
+                            <select name="Day" onChange={this.handleChange} className="form-control" id="month">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -119,7 +169,7 @@ class LoadPage extends Component {
                             <option value="30">30</option>
                             <option value="31">31</option>
                             </select>
-                            <select name="Year" className="form-control" id="year">
+                            <select name="Year" onChange={this.handleChange}  className="form-control" id="year">
                             <option value="2020">2020</option>
                             <option value="2019">2019</option>
                             <option value="2018">2018</option>
@@ -219,7 +269,7 @@ class LoadPage extends Component {
                             <div className="input-group-prepend">
                                 <span className="input-group-text">Relationship Status</span>
                             </div>
-                            <select name="Relationship" className="form-control" id="relationship">
+                            <select name="Relationship" onChange={this.handleChange} className="form-control" id="relationship">
                             <option value="1">Single</option>
                             <option value="2">Relationship</option>
                             <option value="3">Engaged</option>
@@ -233,10 +283,10 @@ class LoadPage extends Component {
                             <div className="input-group-prepend">
                                 <span className="input-group-text">Gender</span>
                             </div>
-                            <select name="gender" className="form-control" id="gender">
-                            <option value="1">Male</option>
-                            <option value="2">Female</option>
-                            <option value="3">Other</option>
+                            <select name="gender" onChange={this.handleChange} className="form-control" id="gender">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
                             </select>
                         </div> 
 
@@ -245,7 +295,7 @@ class LoadPage extends Component {
                             <div className="input-group-prepend">
                                 <span className="input-group-text">Degree</span>
                             </div>
-                            <select name="Degree" className="form-control" id="degree">
+                            <select name="Degree" onChange={this.handleChange} className="form-control" id="degree">
                             <option value="1">Fine Arts</option>
                             <option value="2">General Studies</option>
                             <option value="3">Music</option>
@@ -266,7 +316,7 @@ class LoadPage extends Component {
                             <div className="input-group-prepend">
                                 <span className="input-group-text">Political Party</span>
                             </div>
-                            <select name="Party" className="form-control" id="degree">
+                            <select name="Party" onChange={this.handleChange} className="form-control" id="degree">
                             <option value="1">Republican</option>
                             <option value="2">Democratic</option>
                             <option value="3">Libertarian</option>
@@ -281,7 +331,7 @@ class LoadPage extends Component {
                             <div className="input-group-prepend">
                                 <span className="input-group-text">Ethnicity</span>
                             </div>
-                            <select name="Race" className="form-control" id="race">
+                            <select name="Race" onChange={this.handleChange} className="form-control" id="race">
                             <option value="1">Caucasian</option>
                             <option value="2">Black</option>
                             <option value="3">Hispanic</option>
@@ -299,7 +349,7 @@ class LoadPage extends Component {
                             <div className="input-group-prepend">
                                 <span className="input-group-text">Religion</span>
                             </div>
-                            <select name="religion" className="form-control" id="religion">
+                            <select name="religion" onChange={this.handleChange} className="form-control" id="religion">
                             <option value="1">Non-religion</option>
                             <option value="2">New Age</option>
                             <option value="3">Muslim</option>
@@ -316,19 +366,19 @@ class LoadPage extends Component {
                         </div> 
 
 
-                        <div className="input-group col-md-auto mb-3">
+                        {/* <div className="input-group col-md-auto mb-3">
                             <div className="input-group-prepend">
                                 <span className="input-group-text">Favorite Food</span>
                             </div>
-                            <input name ="food" type="text" className="form-control" id="food"/>
-                        </div>
+                            <input name ="food" type="text" onChange={this.handleChange} className="form-control" id="food"/>
+                        </div> */}
 
 
                         <div className="input-group col-md-auto mb-3">
                             <div className="input-group-prepend">
                                 <span className="input-group-text">Do you Drink?</span>
                             </div>
-                            <select name="drink" className="form-control" id="drink">
+                            <select name="drink" onChange={this.handleChange} className="form-control" id="drink">
                             <option value="1">No</option>
                             <option value="2">Occasionally</option>
                             <option value="3">Often</option>
@@ -341,7 +391,7 @@ class LoadPage extends Component {
                             <div className="input-group-prepend">
                                 <span className="input-group-text">Do you Smoke?</span>
                             </div>
-                            <select name="smoke" className="form-control" id="smoke">
+                            <select name="smoke" onChange={this.handleChange} className="form-control" id="smoke">
                             <option value="1">No</option>
                             <option value="2">Occasionally</option>
                             <option value="3">Often</option>
@@ -350,7 +400,7 @@ class LoadPage extends Component {
                         </div> 
 
 
-                        <div className="input-group col-md-auto mb-3">
+                        {/* <div className="input-group col-md-auto mb-3">
                             <div className="input-group-prepend">
                                 <span className="input-group-text">Movies</span>
                             </div>
@@ -370,9 +420,9 @@ class LoadPage extends Component {
                             <option value="13">War</option>
                             <option value="14">Other</option>
                             </select>
-                        </div> 
+                        </div>  */}
 
-
+{/* 
                         <div className="input-group col-md-auto mb-3">
                             <div className="input-group-prepend">
                                 <span className="input-group-text">Books</span>
@@ -409,14 +459,14 @@ class LoadPage extends Component {
                             <option value="29">Fantasy</option>
                             <option value="30">Other</option>
                             </select>
-                        </div> 
+                        </div>  */}
 
 
-                        <div className="input-group col-md-auto mb-3">
+                        {/* <div className="input-group col-md-auto mb-3">
                             <div className="input-group-prepend">
                                 <span className="input-group-text">Music</span>
                             </div>
-                            <select multiple name="music" className="form-control" id="music">
+                            <select multiple name="music" onChange={this.handleChange}  className="form-control" id="music">
                             <option value="1">Musical theatre</option>
                             <option value="2">Classical music</option>
                             <option value="3">Jazz</option>
@@ -469,9 +519,9 @@ class LoadPage extends Component {
                             <option value="50">Drum and bass</option>
                             <option value="51">Grunge</option>
                             </select>
-                        </div>
+                        </div> */}
 
-                        <div className="input-group col-md-auto mb-3">
+                        {/* <div className="input-group col-md-auto mb-3">
                             <div className="input-group-prepend">
                                 <span className="input-group-text">Video/Board Games</span>
                             </div>
@@ -487,13 +537,13 @@ class LoadPage extends Component {
                             <option value="9">Idle</option>
                             <option value="10">Other</option>
                             </select>
-                        </div>
+                        </div> */}
 
-                        <div className="input-group col-md-auto mb-3">
+                        {/* <div className="input-group col-md-auto mb-3">
                             <div className="input-group-prepend">
                                 <span className="input-group-text">Sports and Outdoors</span>
                             </div>
-                            <select multiple name="sports" className="form-control" id="sports">
+                            <select multiple name="sports" onChange={this.handleChange} className="form-control" id="sports">
                             <option value="1">abseiling</option>
                             <option value="2">aerobics</option>
                             <option value="3">aikido</option>
@@ -632,10 +682,10 @@ class LoadPage extends Component {
                             <option value="136">wrestling</option>
                             <option value="137">other</option>
                             </select>
-                        </div> 
+                        </div>  */}
 
 
-                        <div className="input-group col-md-auto mb-3">
+                        {/* <div className="input-group col-md-auto mb-3">
                             <div className="input-group-prepend">
                                 <span className="input-group-text">Other Hobbies</span>
                             </div>
@@ -1043,8 +1093,8 @@ class LoadPage extends Component {
                             <option value="401">Traveling</option>
                             <option value="402">Whale watching</option>
                             <option value="403">Other</option>
-                            </select>
-                        </div>
+                            </select> */}
+                        {/* </div> */}
 
                     <button type="submit" className="btn btn-primary">Submit</button>
                    

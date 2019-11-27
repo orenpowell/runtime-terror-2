@@ -44,9 +44,10 @@ var con = mysql.createConnection({
    
   })
   
-  app.get('/AllEvents', (req, res) => {
+  app.get('/AllEvents/:id?', (req, res) => {
+    const user = req.params.id ? req.params.id : null;
     
-    con.query(`CALL GetEvents();`, (err,resp,fields) => {
+    con.query(`CALL GetEvents("${user}");`, (err,resp,fields) => {
 
 			if(err) throw err;
      
@@ -57,7 +58,7 @@ var con = mysql.createConnection({
 
   })
 
-  app.get('/AllMarketPlace', (req, res) => {
+  app.get('/AllMarketPlace/:id?', (req, res) => {
     
     con.query(`CALL GetMP();`, (err,resp,fields) => {
 
@@ -83,7 +84,7 @@ var con = mysql.createConnection({
 
   });
 
-  app.get('/Housing/House', (req, res) => {
+  app.get('/Housing/House/:id?', (req, res) => {
     
     con.query(`CALL GetHouses()`, (err,resp,fields) => {
 
@@ -96,7 +97,7 @@ var con = mysql.createConnection({
 
   })
 
-  app.get('/Housing/Roommate', (req, res) => {
+  app.get('/Housing/Roommate/:id?', (req, res) => {
     
     con.query(`SELECT * FROM Housing;`, (err,resp,fields) => {
 
@@ -110,14 +111,15 @@ var con = mysql.createConnection({
   })
 
 
-  app.get('/AllGroups', (req, res) => {
+  app.get('/AllGroups/:id?', (req, res) => {
+    const user = req.params.id ? req.params.id : null;
     
-    con.query(`Call GetGroups();`, (err,resp,fields) => {
+    con.query(`Call GetGroups("${user}");`, (err,resp,fields) => {
 
 			if(err) throw err;
      
     
-    console.log(`Connection made`, resp );
+    //console.log(`Connection made`, resp );
     res.send(resp[0]);
     });
 
@@ -125,21 +127,22 @@ var con = mysql.createConnection({
 
 
 
-  // app.post('/',(req,res)=>{
+  app.post('/setup/student/:id',(req,res)=>{
 
-  //   console.log(req);
+    // console.log(req);
+    console.log(req.body);
 	
-	// 	con.query("select * from Students", (err,res,fields) => {
+		// con.query("select * from Students", (err,res,fields) => {
 
-	// 		if(err) throw err;
+		// 	if(err) throw err;
 
-	// 		console.log(res);
-	// 	});
+		// 	console.log(res);
+		// });
 	
 	
 
 
-// })
+});
 
   app.listen(3001,()=>{
     console.log("Port 3001");

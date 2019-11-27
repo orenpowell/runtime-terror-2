@@ -9,7 +9,7 @@ const Feed = (props) => {
                 {dataset ?
                 dataset.map((item, index) => {
                     return(
-                    <div className="card"  key={item.Title +item.Id}>
+                    <div className="card" onClick={()=> console.log("click")} key={item.Title +item.Id}>
                     <img src="..." className="card-img-top" alt="..."/>
                     <div className="card-body">
                         <h5 className="card-title">{item.Title}</h5>
