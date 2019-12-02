@@ -6,3 +6,7 @@
     float: right;
 
 }
+
+.Feed-Wrapper .card-columns .card .FeedClick {
+    z-index: 1;
+}

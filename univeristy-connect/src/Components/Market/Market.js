@@ -42,12 +42,13 @@ class Market extends Component{
 
     render(){
         const { allItems , SearchBar } = this.state;
+        const {activePage} = this.props;
         return(
             <div >
             {SearchBar  ?
             <div className="Housing-Wrapper">
             <SearchBar></SearchBar>
-            <Feed dataset = {allItems}></Feed> 
+            <Feed activePage ={activePage} dataset = {allItems}></Feed> 
             </div>: null
             }
         

@@ -45,9 +45,10 @@ var con = mysql.createConnection({
   })
   
   app.get('/AllEvents/:id?', (req, res) => {
-    const user = req.params.id ? req.params.id : null;
+    const user = req.params.id ? `"${req.params.id}"` : null;
+    console.log(user);
     
-    con.query(`CALL GetEvents("${user}");`, (err,resp,fields) => {
+    con.query(`CALL GetEvents(${user});`, (err,resp,fields) => {
 
 			if(err) throw err;
      
@@ -112,9 +113,10 @@ var con = mysql.createConnection({
 
 
   app.get('/AllGroups/:id?', (req, res) => {
-    const user = req.params.id ? req.params.id : null;
+    const user = req.params.id ? `"${req.params.id}"` : null;
+    console.log(user)
     
-    con.query(`Call GetGroups("${user}");`, (err,resp,fields) => {
+    con.query(`Call GetGroups(${user});`, (err,resp,fields) => {
 
 			if(err) throw err;
      
@@ -127,22 +129,148 @@ var con = mysql.createConnection({
 
 
 
+  
+  app.get('/Top10/:table', (req, res) => {
+    const user = req.params.id ? `"${req.params.id}"` : null;
+    const route = req.params.table;
+    
+    con.query(`Call top${route}();;`, (err,resp,fields) => {
+
+      if(err) throw err;
+      
+    res.send(resp[0]);
+    });
+
+  })
+
+
+  app.get('/Join/:table/:id/:user', (req, res) => {
+    const user = req.params.id ? `"${req.params.id}"` : null;
+    const route = req.params.table;
+    const query = req.params.table === "Events" ? `Insert into MyEventsStudent values( ${req.params.id}, "${req.params.user}")` : 
+                                                `Insert into studentInGroups values(${req.params.id}, "${req.params.user}")`;
+   
+    con.query(`${query};`, (err,resp,fields) => {
+
+      if(err) throw err;
+      
+    res.send(resp[0]);
+    });
+
+  });
+
+  
+
+  app.get('/UnJoin/:table/:id/:user', (req, res) => {
+    const user = req.params.id ? `"${req.params.id}"` : null;
+    const route = req.params.table;
+    const query = req.params.table === "Events" ? `Delete from MyEventsStudent where eventid =${req.params.id} and studentId = "${req.params.user}"` : 
+                                                `Delete from studentInGroups where groupId = ${req.params.id} and studentId = "${req.params.user}"`;
+   
+    con.query(`${query};`, (err,resp,fields) => {
+
+      if(err) throw err;
+      
+    res.send(resp[0]);
+    });
+
+  });
+
   app.post('/setup/student/:id',(req,res)=>{
 
-    // console.log(req);
+    const body = req.body;
+    
     console.log(req.body);
 	
-		// con.query("select * from Students", (err,res,fields) => {
+		con.query(`call NewStudentForm("${body.student_id}", "${body.first_name}", "${body.last_name}", "${body.grad_year}", "${body.dob}", "${body.gender}", ${null}, "${body.roommate_Search}", "${body.hometown}", "${body.Relationship}", "${body.Party}", "${body.smoke}", "${body.drink}", "${body.degree}", "${body.religion}" )`, (err,res,fields) => {
 
-		// 	if(err) throw err;
+			if(err) throw err;
 
-		// 	console.log(res);
-		// });
+			console.log(res);
+		});
 	
 	
 
 
 });
+
+
+app.post('/create/group/:id',(req,res)=>{
+
+  const body = req.body;
+  console.log(req.body);
+  
+
+  // con.query(`${query};`, (err,resp,fields) => {
+
+
+  //   if(err) throw err;
+
+  //   console.log(res);
+  // });
+
+
+
+
+});
+
+app.post('/create/event/:id',(req,res)=>{
+
+  const body = req.body;
+  console.log(req.body);
+  
+
+  // con.query(`${query};`, (err,resp,fields) => {
+
+
+  //   if(err) throw err;
+
+  //   console.log(res);
+  // });
+
+
+
+
+});
+
+app.post('/create/house/:id',(req,res)=>{
+
+  const body = req.body;
+  console.log(req.body);
+  
+
+  // con.query(`${query};`, (err,resp,fields) => {
+
+
+  //   if(err) throw err;
+
+  //   console.log(res);
+  // });
+
+
+
+
+});
+
+app.post('/create/item/:id',(req,res)=>{
+
+  const body = req.body;
+  console.log(req.body);
+  
+
+  // con.query(`${query};`, (err,resp,fields) => {
+
+
+  //   if(err) throw err;
+
+  //   console.log(res);
+  // });
+
+
+
+
+});
+
 
   app.listen(3001,()=>{
     console.log("Port 3001");

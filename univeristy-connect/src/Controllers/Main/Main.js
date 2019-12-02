@@ -31,7 +31,7 @@ class Main extends Component {
             activeMenu: target.title,
             searchBarType: target.name
         });
-        console.log(target.name, target.title);
+        
     }
 
     setActiveSearchBarType({target}){
@@ -44,10 +44,11 @@ class Main extends Component {
     
     render() {
         const routes = window.Models;
+        const { setActiveMainPage, joinFunction, unJoinFunction} = this.props;
         const current = routes.filter((route, index) => route.path === this.props.activeMainPage);
         const {activeMenu, searchBarType} = this.state;
         const routeList = routes.map((route, index) => {
-           
+           console.log(this.state.activeMenu);
             return(
                 //<div className="Main-Wrapper border" id="Main">
                 <Route
@@ -60,7 +61,11 @@ class Main extends Component {
                             querySearch={this.onSearch}
                             setActiveMenu={(e) => this.setActiveMenu(e)}
                             activeMenu={activeMenu}
+                            activePage ={this.props.activePage}
                             searchBarType={searchBarType}
+                            joinFunction={(e)=> joinFunction(e)}
+                            unJoinFunction={(e) => unJoinFunction(e)}
+                            setActiveMainPage={setActiveMainPage}
                             setActiveSearchBarType={(e => this.setActiveSearchBarType(e))}
                         ></route.Component>
                     )               

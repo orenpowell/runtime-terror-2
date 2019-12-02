@@ -18,6 +18,7 @@ class Header extends Component{
 
     render(){
         const { addons } = this.state;
+        const {setActiveMainPage} = this.props;
 
         return(
             <div className="HomePage-wrapper border" id="Header">
@@ -36,6 +37,7 @@ class Header extends Component{
                             return (
                                 <span key={addon.title}>
                                 <Link
+                                    onClick={()=>setActiveMainPage("None")}
                                     to={addon.path}
                                     >
                                     <i className={`fas fa-${addon.icon}`}></i>

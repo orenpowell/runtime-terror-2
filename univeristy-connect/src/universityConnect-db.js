@@ -1,4 +1,5 @@
 import UniversityConn from "./UniversityConnect";
+import auth from './Utils/auth'
 
 const objectConstruct = (data) => {
 
@@ -11,8 +12,19 @@ const objectConstruct = (data) => {
 }
 
 
+const formConstructor = (data) => {
+    const object = {...data};
+    const {Day, Month, Year} = object;
+    const newdate = `${Year}-${Month}-${Day}`;
+    delete object.Day;
+    delete object.Year;
+    delete object.Month;
+    const newObj = {'student_id':auth.getToken('loginUser'),...object, 'dob' : newdate};
+    return newObj;
 
+}
 const UniversityDB = {
-    objectConstruct
+    objectConstruct,
+    formConstructor
 }
 export default UniversityDB;

@@ -3,6 +3,8 @@ import { Redirect, Route } from 'react-router-dom';
 import UniversityConn from '../../UniversityConnect';
 import req from '../../Utils/request';
 import Feed from '../Feed/Feed'
+import auth from '../../Utils/auth'
+
 class Display extends Component  {
         constructor(props){
             super(props);
@@ -63,6 +65,27 @@ class Display extends Component  {
       
     }
 
+    // joinFunction(id) {
+    //     const user = auth.getToken('loginUser');
+    //     const { activePage } = this.props; 
+    
+
+    //     const requestURL = `http://localhost:3001/Join/${activePage}/${id}/${user}`;
+
+    //     console.log(requestURL);
+        
+    //       req.query(requestURL, (error, response, body) => {
+    
+    //         if (error) {
+    //             return console.error('Request failed:', body);
+    //         }
+    //         //   const result = JSON.parse(body);
+    //           //this.setState({dataSet : result})
+    //         } );
+
+
+    // }
+
     onSearch = (e) => {
 
     }
@@ -74,14 +97,15 @@ class Display extends Component  {
 
     renderRedirect = () => {
         const { SearchBar, dataSet } = this.state;
-        const { querySearch } = this.props; 
+        const { querySearch, activePage, joinFunction, unJoinFunction } = this.props; 
+        console.log(activePage);
         if (SearchBar === null) {
           return <Redirect to='/' />
         }else{
             return (
             <React.Fragment>
             <SearchBar setActiveMenu={this.props} querySearch={querySearch}></SearchBar>
-            <Feed dataset ={dataSet}></Feed>
+            <Feed activePage ={activePage} joinFunction={(e) => joinFunction(e)} unJoinFunction={(e) =>unJoinFunction(e)} dataset ={dataSet}></Feed>
             </React.Fragment>
             ) 
         }

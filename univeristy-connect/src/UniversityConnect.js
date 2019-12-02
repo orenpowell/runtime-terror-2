@@ -2,6 +2,7 @@ window.Models = [];
 window.sideModels = [];
 window.topModels = [];
 window.optionModels = [];
+window.createModels = [];
 const registerModel = (model) => {
     
     window.Models.push(model);
@@ -12,8 +13,15 @@ const registerModel = (model) => {
     else if(model.type === 'option')
     {
         window.optionModels.push(model);
+    }
+    else if(model.type === "create") {
+        window.createModels.push(model);
     }  
 };
+
+const getCreateModels = () => {
+    return window.createModels;
+}
 const getOptionsModels = () => {
     return window.optionModels;
 }
@@ -35,7 +43,8 @@ const UniversityConn = {
     getModels,
     getAddons,
     getSideModels,
-    getOptionsModels
+    getOptionsModels,
+    getCreateModels
 }
 
 window.UniversityConn = UniversityConn;

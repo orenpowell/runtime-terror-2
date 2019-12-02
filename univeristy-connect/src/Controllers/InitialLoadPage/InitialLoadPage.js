@@ -2,11 +2,28 @@ import React, { Component } from 'react'
 import UniversityConn from '../../UniversityConnect';
 import req from '../../Utils/request' 
 import auth from '../../Utils/auth'
+import universityDB from '../../universityConnect-db'
 class LoadPage extends Component {
     constructor(props){
         super(props);
         this.state = {
-            value :{}
+            value :{
+                Day: null,
+                Month: null,
+                Party: null,
+                Relationship: null,
+                Year: null,
+                degree: null,
+                drink: null,
+                first_name: null,
+                gender: null,
+                grad_year: null,
+                hometown: null,
+                last_name: null,
+                religion: null,
+                roommate_Search: null,
+                smoke: null
+            }
         }
     }
 
@@ -18,9 +35,11 @@ class LoadPage extends Component {
     handleSubmit(event) {
         event.preventDefault();
         const {value } = this.state;
+        console.log(value);
+        const formatValue = universityDB.formConstructor(value);
         const user = auth.getToken('loginUser') ;
         const requestURL = `http://localhost:3001/setup/student/${user}`;
-        req.post(requestURL, value);
+        req.post(requestURL, formatValue);
         this.props.history.push('/');
     }
 
@@ -89,7 +108,7 @@ class LoadPage extends Component {
                             <div className="input-group-prepend">
                                 <span className="input-group-text">Hometown</span>
                             </div>
-                            <input name ="city" type="text" onChange={this.handleChange}  className="form-control" id="city"/>
+                            <input name ="hometown" type="text" onChange={this.handleChange}  className="form-control" id="city"/>
                         </div>
 
                         
@@ -98,11 +117,11 @@ class LoadPage extends Component {
                                 <span className="input-group-text">Year</span>
                             </div>
                             <select name="grad_year" onChange={this.handleChange} className="form-control" id="school_year">
-                            <option value="1">Freshman</option>
-                            <option value="2">Sophmore</option>
-                            <option value="3">Junior</option>
-                            <option value="4">Senior</option>
-                            <option value="5">Graduate Student</option>
+                            <option value="Freshman">Freshman</option>
+                            <option value="Sophmore">Sophmore</option>
+                            <option value="Junior">Junior</option>
+                            <option value="Senior">Senior</option>
+                            <option value="Graduate Student">Graduate Student</option>
                             </select>
                         </div>
                         
@@ -270,11 +289,11 @@ class LoadPage extends Component {
                                 <span className="input-group-text">Relationship Status</span>
                             </div>
                             <select name="Relationship" onChange={this.handleChange} className="form-control" id="relationship">
-                            <option value="1">Single</option>
-                            <option value="2">Relationship</option>
-                            <option value="3">Engaged</option>
-                            <option value="4">Married</option>
-                            <option value="5" selected>Other</option>
+                            <option value="Single">Single</option>
+                            <option value="Relationship">Relationship</option>
+                            <option value="Engaged">Engaged</option>
+                            <option value="Married">Married</option>
+                            <option value="Other" selected>Other</option>
                             </select>
                         </div>
                         
@@ -295,19 +314,19 @@ class LoadPage extends Component {
                             <div className="input-group-prepend">
                                 <span className="input-group-text">Degree</span>
                             </div>
-                            <select name="Degree" onChange={this.handleChange} className="form-control" id="degree">
-                            <option value="1">Fine Arts</option>
-                            <option value="2">General Studies</option>
-                            <option value="3">Music</option>
-                            <option value="4">Education</option>
-                            <option value="5">Science</option>
-                            <option value="6">Business</option>
-                            <option value="7">Engineering</option>
-                            <option value="8">Math</option>
-                            <option value="9">Technology</option>
-                            <option value="10">Nursing</option>
-                            <option value="11">Social Work</option>
-                            <option value="12" selected>Other</option>
+                            <select name="degree" onChange={this.handleChange} className="form-control" id="degree">
+                            <option value="Fine Arts">Fine Arts</option>
+                            <option value="General Studies">General Studies</option>
+                            <option value="Music">Music</option>
+                            <option value="Education">Education</option>
+                            <option value="Science">Science</option>
+                            <option value="Business">Business</option>
+                            <option value="Engineering">Engineering</option>
+                            <option value="Math">Math</option>
+                            <option value="Technology">Technology</option>
+                            <option value="Nursing">Nursing</option>
+                            <option value="Social Work">Social Work</option>
+                            <option value="Other" selected>Other</option>
                             </select>
                         </div> 
 
@@ -317,12 +336,12 @@ class LoadPage extends Component {
                                 <span className="input-group-text">Political Party</span>
                             </div>
                             <select name="Party" onChange={this.handleChange} className="form-control" id="degree">
-                            <option value="1">Republican</option>
-                            <option value="2">Democratic</option>
-                            <option value="3">Libertarian</option>
-                            <option value="4">Independent</option>
-                            <option value="5">Other</option>
-                            <option value="6" selected>Rather Not Say</option>
+                            <option value="Republican">Republican</option>
+                            <option value="Democratic">Democratic</option>
+                            <option value="Libertarian">Libertarian</option>
+                            <option value="Independent">Independent</option>
+                            <option value="Other">Other</option>
+                            <option value="Rather Not Say" selected>Rather Not Say</option>
                             </select>
                         </div> 
 
@@ -332,16 +351,16 @@ class LoadPage extends Component {
                                 <span className="input-group-text">Ethnicity</span>
                             </div>
                             <select name="Race" onChange={this.handleChange} className="form-control" id="race">
-                            <option value="1">Caucasian</option>
-                            <option value="2">Black</option>
-                            <option value="3">Hispanic</option>
-                            <option value="4">Indian</option>
-                            <option value="5">Middle Eastern</option>
-                            <option value="6">Native American</option>
-                            <option value="7">Asian</option>
-                            <option value="8">Mixed Race</option>
-                            <option value="9">Other</option>
-                            <option value="10" selected>Rather Not Say</option>
+                            <option value="Caucasian">Caucasian</option>
+                            <option value="Black">Black</option>
+                            <option value="Hispanic">Hispanic</option>
+                            <option value="Indian">Indian</option>
+                            <option value="Middle Eastern">Middle Eastern</option>
+                            <option value="Native American">Native American</option>
+                            <option value="Asian">Asian</option>
+                            <option value="Mixed Race">Mixed Race</option>
+                            <option value="Other">Other</option>
+                            <option value="Rather Not Say" selected>Rather Not Say</option>
                             </select>
                         </div> 
 
@@ -350,18 +369,18 @@ class LoadPage extends Component {
                                 <span className="input-group-text">Religion</span>
                             </div>
                             <select name="religion" onChange={this.handleChange} className="form-control" id="religion">
-                            <option value="1">Non-religion</option>
-                            <option value="2">New Age</option>
-                            <option value="3">Muslim</option>
-                            <option value="4">Jewish</option>
-                            <option value="5">Catholic</option>
-                            <option value="6">Buddhist</option>
-                            <option value="7">Hindu</option>
-                            <option value="8">Anglican</option>
-                            <option value="9">Sikh</option>
-                            <option value="10">Christian - other</option>
-                            <option value="11">Other</option>
-                            <option value="12" selected>Rather Not Say</option>
+                            <option value="Non-religion">Non-religion</option>
+                            <option value="New Age">New Age</option>
+                            <option value="Muslim">Muslim</option>
+                            <option value="Jewish">Jewish</option>
+                            <option value="Catholic">Catholic</option>
+                            <option value="Buddhist">Buddhist</option>
+                            <option value="Hindu">Hindu</option>
+                            <option value="Anglican">Anglican</option>
+                            <option value="Sikh">Sikh</option>
+                            <option value="Christian - other">Christian - other</option>
+                            <option value="Other">Other</option>
+                            <option value="Rather Not Say" selected>Rather Not Say</option>
                             </select>
                         </div> 
 
@@ -379,10 +398,10 @@ class LoadPage extends Component {
                                 <span className="input-group-text">Do you Drink?</span>
                             </div>
                             <select name="drink" onChange={this.handleChange} className="form-control" id="drink">
-                            <option value="1">No</option>
-                            <option value="2">Occasionally</option>
-                            <option value="3">Often</option>
-                            <option value="4" selected>Rather Not Say</option>
+                            <option value="No">No</option>
+                            <option value="Occasionally">Occasionally</option>
+                            <option value="Often">Often</option>
+                            <option value="Rather Not Say" selected>Rather Not Say</option>
                             </select>
                         </div> 
 
@@ -392,10 +411,10 @@ class LoadPage extends Component {
                                 <span className="input-group-text">Do you Smoke?</span>
                             </div>
                             <select name="smoke" onChange={this.handleChange} className="form-control" id="smoke">
-                            <option value="1">No</option>
-                            <option value="2">Occasionally</option>
-                            <option value="3">Often</option>
-                            <option value="4" selected>Rather Not Say</option>
+                            <option value="No">No</option>
+                            <option value="Occasionally">Occasionally</option>
+                            <option value="Often">Often</option>
+                            <option value="Rather Not Say" selected>Rather Not Say</option>
                             </select>
                         </div> 
 

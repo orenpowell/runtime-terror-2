@@ -15,7 +15,8 @@ class App extends React.Component {
     super(props);
     this.state = {
       loggedIn: false,
-      initialLogin: true  }
+      initialLogin: true,
+      activeMenu: 'Home'}
   }
 
   componentDidMount() {
@@ -26,6 +27,7 @@ class App extends React.Component {
     
     
   }
+
 
    onConfirmLogin(){
      console.log("here");
@@ -52,7 +54,9 @@ class App extends React.Component {
         
         <Route path="/auth/login" component={Login}></Route>
         <PrivateRoute path='/setup' component={InitialLoginPage}></PrivateRoute>
-        <PrivateRoute path="/" component= {HomePage}/>
+        <PrivateRoute path="/" 
+       
+        component= {HomePage}/>
       </Switch>
     </Router>
   )

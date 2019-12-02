@@ -17,6 +17,10 @@ class MyEvents extends Component{
     }
 
     componentWillMount(){
+       this.loadData();
+    }
+
+    loadData() {
         const user = auth.getToken('loginUser');
         const requestURL = `http://localhost:3001/AllEvents/${user}`;
 
@@ -37,21 +41,19 @@ class MyEvents extends Component{
             //   console.log(result);
             
             } );
-    }
-
-    componentDidMount() {
-    }
+    };
 
     render(){
      
         const { allEvents, SearchBar }  = this.state;
+        const {activePage, joinFunction, unJoinFunction} = this.props;
         return(
             <div>
             {SearchBar  ?
             <div className="MyEvents-Wrapper">
                 <p>Welcome to my Events</p>
             <SearchBar></SearchBar>
-            <Feed dataset = {allEvents}></Feed> 
+            <Feed activePage={activePage} joinFunction={(e) => joinFunction(e)} unJoinFunction={(e) => {unJoinFunction(e); this.loadData()}} dataset = {allEvents}></Feed> 
             </div>: null
             }
            </div> 

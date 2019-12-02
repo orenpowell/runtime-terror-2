@@ -33,7 +33,7 @@ class Housing extends Component{
     // }
 
     render(){
-        const { setActiveMenu } = this.props;
+        const { setActiveMenu, setActiveMainPage } = this.props;
         //console.log(houseType);
         const options = UniversityConn.getOptionsModels();
        
@@ -58,8 +58,9 @@ class Housing extends Component{
                     <Link
                         name={`/Housing/${option.title}`}
                         to='/Display'
-                        onClick={(e) => setActiveMenu(e) }
+                        onClick={(e) => {setActiveMenu(e);} }
                         title={option.title}
+                    
                     >
                         {option.desc}
                     </Link>

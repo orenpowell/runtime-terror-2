@@ -30,7 +30,7 @@ class Sidebar extends Component {
                 {modelLinks.map((item, i) => {
                     return (
                         
-                        <ul onClick={() => this.props.setActiveMainPage(item)} key={item.title + i}>
+                        <ul onClick={() => this.props.setActiveMainPage(item.title)} key={item.title + i}>
                             
                             <Link 
                                 to={item.path}>
