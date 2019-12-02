@@ -166,7 +166,7 @@ class CreateHouse extends Component{
                     <div className="input-group ">
                         <div className="input-group-prepend">
                             <div className="input-group-text radio">
-                                <input type="radio" onChange={this.handleChange} name="apartment_onCampus" />
+                                <input type="radio" onChange={this.handleChange} name="house" />
                             </div>
                         </div>
                         <div className="input-group-prepend">
@@ -177,7 +177,7 @@ class CreateHouse extends Component{
                     <div className="input-group ">
                         <div className="input-group-prepend">
                             <div className="input-group-text radio">
-                                <input type="radio" onChange={this.handleChange} name="apartment_offCamps" />
+                                <input type="radio" onChange={this.handleChange} name="house" />
                             </div>
                         </div>
                         <div className="input-group-prepend">
@@ -192,14 +192,14 @@ class CreateHouse extends Component{
                             </div>
                         </div>
                         <div className="input-group-prepend">
-                            <span className="input-group-text" id="">House</span>
+                            <span className="input-group-text" id="" >House</span>
                         </div>
                     </div>
                     
                     <div className="input-group ">
                         <div className="input-group-prepend">
                             <div className="input-group-text radio">
-                                <input type="radio" onChange={this.handleChange} name="townhouse" />
+                                <input type="radio" onChange={this.handleChange} name="house" />
                             </div>
                         </div>
                         <div className="input-group-prepend">
@@ -210,7 +210,7 @@ class CreateHouse extends Component{
                     <div className="input-group ">
                         <div className="input-group-prepend">
                             <div className="input-group-text radio">
-                                <input type="radio" onChange={this.handleChange} name="condo" />
+                                <input type="radio" onChange={this.handleChange} name="house" />
                             </div>
                         </div>
                         <div className="input-group-prepend">
