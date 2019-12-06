@@ -1,18 +1,25 @@
-# runtime-terror-2
+# Runtime Terror 2
 Capstone Project
 
-Before running the program, install the following:
-- Git
-- npm install 
-- VS Code
+folder/file: Contents (Project Report)
+    This folder will contain the following documents
+    - Executive Summary
+    - Final Requirements and comparison with the initial time line
+    - Project Results Compared with Expectations
+    - Project Process Review
 
--Once installed, open Git and put in the following:
--- git init
--- git pull https://github.com/orenpowell/runtime-terror-2
--Once you downloaded all the files, open VS Code.
-- On VS Code, click Terminal and input "npm -v"
-- Afterward on VS Code, File > Open Folder
-- In File Explorer Window, go to the folder where you saved the GitHub files
-- Afterward on VS Code, open Terminal and input "npm install"
-- Afterward on VS Code, input "npm start"
- 
+folder/file: Contents (Manuals)
+    This folder will contain the following documents
+    - User/Administrative Manuaks
+    - Deployment/Installation Instructions 
+    
+folder/file: Contents (Code)
+    This folder will contain the following content
+    - Stylesheet Files
+    - Database Files
+    - Media (Photos)
+    - Javascript Files
+    - Hypertext Markup Language (HTML) Files
+    - Miscellaneous Files to help properly run the application
+    
+    
