@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './Controllers/App/App';
 import * as serviceWorker from './serviceWorker';
+//import './universityConnect-registry'
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

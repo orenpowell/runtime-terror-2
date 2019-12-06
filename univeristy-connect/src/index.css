@@ -1,3 +1,28 @@
+@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
+body { margin: 30px; }
+.search {
+  position: relative;
+  color: #aaa;
+  font-size: 16px;
+}
+
+.search input {
+  width: 400px;
+  height: 32px;
+
+  background: #fcfcfc;
+  border: 1px solid #aaa;
+  border-radius: 50px;
+  box-shadow: 0 0 3px #ccc, 0 10px 15px #ebebeb inset;
+}
+
+.search input { text-indent: 32px;}
+.search .fa-search { 
+  position: absolute;
+  top: 10px;
+  left: 25px;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -24,7 +49,28 @@ code {
 .Header
 {
   background-color: #D5E3FB;
+  padding-top: 10px!important;
 }
+#Header 
+{
+  height: 50px!important;
+}
+@media(max-width: 991px){
+#Header {
+  /*height: 100px!important;*/}
+  .icon-wrapper
+  {
+    margin-top: -32px;
+  }
+}
+@media(max-width: 540px)
+{
+  .search input
+  {
+    width: 80%;
+  }
+}
+
 
 .card-deck
 {
@@ -68,4 +114,42 @@ code {
 .card-body
 {
   background-color: #E6E6E6;
+}
+.col-md-4 {
+  max-width: 50%;
+}
+
+.card:hover{
+  transform: scale(1.1);
+}
+
+.form-control
+{
+  border-radius: 1rem;
+}
+.search-button
+{
+  visibility: hidden;
+}
+.login-photo
+{
+  position: absolute;
+  right: 0%;
+  height: 100%;
+}
+.login-logo
+{
+  height: 100px;
+}
+.col-lg-4
+{
+
+  left: 33%;
+  margin: 10px;
+}
+
+.icon-wrapper
+{
+  float: right;
+  padding-right: 15px;
 }

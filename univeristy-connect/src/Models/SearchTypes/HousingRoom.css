@@ -1,0 +1,13 @@
+.editable-Pick {
+    position: absolute;
+    z-index: 1;
+    width:  calc(100% - 140px);
+    height: 38px;
+    left: 68px;
+    border-style: none;
+    
+}
+
+.input-group {
+    position: relative;
+}

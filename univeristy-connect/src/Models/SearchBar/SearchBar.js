@@ -1,20 +1,48 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './SearchBar.css'
-const SearchBar = (props) => {
-return(
+import UniversityConn from '../../UniversityConnect'
+class SearchBar extends Component {
+  constructor(props){
+    super(props);
+    this.state ={
+      searchSet: null
+    }
+  }
+
+ componentDidMount(){
+
+ }
+
+ handleChange = ({ target }) =>{
+  const filters = target.value;
+  this.setState({searchSet: filters});
+  console.log(filters);
+}
+ 
+ render(){
+  return(
     <div className="Search-wrapper container ">
         <div className="input-group center-block">
-          <div className="zip col-lg-9">
-            <input type="text" className="form-control" placeholder="Search...."></input>
+          <div className="zip col-lg-9" className="search">
+            <input type="text" className="form-control" placeholder="Search...." onChange={this.handleChange} name="wordFilters"></input>
           </div>
           <div className="col-lg-3">
-            <button className='btn-primary'>
+            <button className='btn-primary search-button'  >
               Search
             </button>
           </div>
         </div>
       </div>
-)
+  )
+  }
 }
 
-export default SearchBar;
+export default UniversityConn.registerModel({
+  path: '/Search',
+  Component: SearchBar,
+  title: 'SearchBar',
+
+  type: 'option',
+  icon: null,
+  desc: null
+})
