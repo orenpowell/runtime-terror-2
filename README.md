@@ -2,24 +2,12 @@
 Capstone Project
 
 folder/file: Contents (Project Report)
-    This folder will contain the following documents
-    - Executive Summary
-    - Final Requirements and comparison with the initial time line
-    - Project Results Compared with Expectations
-    - Project Process Review
+             This folder will contain the Executive Summary, Final Requirements and comparison with the initial time line, Project Results Compared with Expectations, and Project Process Review
 
 folder/file: Contents (Manuals)
-    This folder will contain the following documents
-    - User/Administrative Manuaks
-    - Deployment/Installation Instructions 
+             This folder will contain User/Administrative Manuals and Deployment/Installation Instructions.
     
 folder/file: Contents (Code)
-    This folder will contain the following content
-    - Stylesheet Files
-    - Database Files
-    - Media (Photos)
-    - Javascript Files
-    - Hypertext Markup Language (HTML) Files
-    - Miscellaneous Files to help properly run the application
+             This folder will contain Stylesheet Files, Database Files, Media (Photos), Javascript Files, Hypertext Markup Language (HTML) Files, and Miscellaneous Files to help properly run the application
     
     
